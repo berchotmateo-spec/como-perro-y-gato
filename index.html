@@ -3,26 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Como Perro y Gato — Pet Shop y Vivero en Mar del Plata</title>
-<meta name="description" content="Como Perro y Gato, pet shop y vivero en Mar del Plata: alimento y accesorios para perros y gatos, y plantas. Armá tu pedido y mandalo por WhatsApp.">
+<title>Como Perro y Gato — Pet Shop en Villa Primera, Mar del Plata</title>
+<meta name="description" content="Como Perro y Gato, pet shop en Villa Primera, Mar del Plata: alimento y accesorios para perros y gatos. Armá tu pedido y mandalo por WhatsApp.">
 <!-- DEMO: que Google no la muestre hasta que el dueño apruebe. Se saca el día que compra. -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#17151A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2317151A'/%3E%3Cg fill='%237EBC06'%3E%3Cpath d='M12 12.6c-2.9 0-5.2 2.6-5.2 4.7 0 1.5 1.2 2.3 2.6 2.3 1 0 1.7-.5 2.6-.5s1.6.5 2.6.5c1.4 0 2.6-.8 2.6-2.3 0-2.1-2.3-4.7-5.2-4.7z'/%3E%3Cellipse cx='6.4' cy='10.6' rx='1.7' ry='2.2'/%3E%3Cellipse cx='9.8' cy='6.8' rx='1.9' ry='2.4'/%3E%3Cellipse cx='14.2' cy='6.8' rx='1.9' ry='2.4'/%3E%3Cellipse cx='17.6' cy='10.6' rx='1.7' ry='2.2'/%3E%3C/g%3E%3C/svg%3E">
-<meta property="og:title" content="Como Perro y Gato · Pet Shop y Vivero">
-<meta property="og:description" content="Alimento y accesorios para perros y gatos, y plantas. Mar del Plata.">
+<meta property="og:title" content="Como Perro y Gato · Pet Shop">
+<meta property="og:description" content="Alimento y accesorios para perros y gatos. Villa Primera, Mar del Plata.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lilita+One&family=Manrope:wght@400;500;600;700;800&display=swap">
 <style>
 /* ============================================================
-   COMO PERRO Y GATO · Pet Shop y Vivero
+   COMO PERRO Y GATO · Pet Shop (Teodoro Bronzini e Ituzaingó)
    Colores medidos sobre la foto del frente que mandó Mateo
    (provisorios hasta ver el logo original):
      negro del cartel · verde lima de la pared · fucsia de "PET SHOP"
-     · amarillo de "Como Perro y Gato" (solo sobre negro)
-   y, por el vivero, verde hoja y tierra.
+     · amarillo de "Como Perro y Gato" (solo sobre negro).
 
    Cada forma, un solo trabajo:
      - borde PUNTEADO  → solo el chip "A confirmar" (dato sin confirmar)
@@ -45,9 +44,6 @@
   --fucsia-osc:#A11F59;
   --fucsia-suave:#FBE7F0;
   --amarillo:#F0DC4A;
-  --tierra:#8A4F2A;
-  --tierra-clara:#EBDCC6;
-  --tierra-media:#C9A47F;
   --wa:#14804A;
   --wa-osc:#0F6A3C;
   --error:#B3261E;
@@ -90,13 +86,14 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 /* --- chip "A confirmar": el único borde punteado de la página --- */
 .chip-ac{display:inline-flex;align-items:center;gap:.3em;padding:.12em .6em;border:1.5px dashed currentColor;border-radius:999px;
   font:700 .72rem/1.5 var(--t-texto);letter-spacing:.3px;text-transform:uppercase;color:var(--gris);white-space:nowrap;vertical-align:middle}
+.chip-ac[hidden]{display:none}
 .oscuro .chip-ac{color:#D9D3DC}
 
 /* --- foto pendiente: rayado en diagonal --- */
 .foto-pend{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;text-align:center;
   border-radius:16px;color:var(--gris);font-weight:700;font-size:.85rem;padding:1em;min-height:150px;
   background:repeating-linear-gradient(-45deg,#F1ECE2 0 10px,#F8F5EE 10px 20px);border:1px solid var(--linea)}
-.foto-pend .ic{width:28px;height:28px;color:var(--tierra)}
+.foto-pend .ic{width:28px;height:28px;color:var(--gris)}
 
 /* --- barra de VISTA PREVIA --- */
 .previa{margin:0;background:var(--amarillo);color:var(--negro);text-align:center;font:800 .78rem/1.35 var(--t-texto);
@@ -112,6 +109,7 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 .marca small{font:800 .66rem/1.2 var(--t-texto);letter-spacing:1.6px;text-transform:uppercase;color:var(--lima);margin-top:4px}
 .estado{display:inline-flex;align-items:center;gap:.45em;font-weight:700;font-size:.85rem;white-space:nowrap}
 .estado::before{content:"";width:10px;height:10px;border-radius:50%;background:#9A939E;flex:none}
+.estado[hidden]{display:none}
 .estado.abierto::before{background:var(--lima);box-shadow:0 0 0 4px rgba(126,188,6,.25)}
 .estado.cerrado::before{background:#E0607E}
 .cab .estado{color:#EDE9EF}
@@ -131,12 +129,11 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 @media (min-width:880px){.portada .envolver{grid-template-columns:1.15fr .85fr}}
 .ciudad{display:inline-flex;align-items:center;gap:.4em;font-weight:800;font-size:.8rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--hoja)}
 /* el logo: el cartel del frente, enderezado y limpio (img/logo-cartel.webp). Nunca recortado. */
-.portada h1{margin:.55em 0 .6em}
+.portada h1{margin:.55em 0 .7em}
 .portada h1 img{display:block;width:clamp(180px,46vw,270px);height:auto;border-radius:20px;
   box-shadow:0 14px 30px rgba(23,21,26,.25)}
 .bajada{display:flex;align-items:center;gap:.5em;flex-wrap:wrap;font:400 clamp(1.25rem,3.6vw,1.7rem)/1.1 var(--t-titulo);color:var(--negro);margin:0 0 .7em}
 .bajada .tag{background:var(--negro);color:var(--amarillo);padding:.18em .55em .22em;border-radius:10px}
-.bajada .tag.vivero{background:var(--lima);color:var(--negro)}
 .bajada .mas{font-family:var(--t-mano);color:var(--gris)}
 .portada p.lead{font-size:clamp(1.05rem,2.4vw,1.2rem);max-width:34em;margin:0 0 1.1em;color:#3A353D}
 .hoy{display:flex;flex-wrap:wrap;align-items:center;gap:.4em .8em;background:var(--papel);border:1px solid var(--linea);
@@ -148,19 +145,19 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 .ilustra svg{display:block;width:100%;height:auto}
 @media (max-width:879px){.ilustra{max-width:300px;margin-top:-6px}}
 
-/* --- el guiño: pisadas que brotan, en la tierra al pie de la portada --- */
+/* --- el guiño: "como perro y gato". Huellas de perro entran por la izquierda y de gato por la
+       derecha, y se cruzan en el medio (una sola vez, al cargar; el final queda visible) --- */
 .sendero{position:relative;height:96px;margin-top:10px;pointer-events:none}
-.sendero .tierra{position:absolute;inset:auto 0 0 0;width:100%;height:96px;display:block}
-.paso{position:absolute;bottom:var(--y);left:var(--x);width:52px;height:52px;margin-left:-26px}
-.paso .pata{position:absolute;right:0;bottom:0;width:34px;height:34px;color:#6E3B1C;transform:rotate(var(--r))}
-.paso .brote{position:absolute;left:0;bottom:12px;width:16px;height:30px;transform-origin:50% 100%}
-@media (max-width:620px){.paso:nth-child(odd of .paso){display:none}}
+.sendero .vereda{position:absolute;inset:auto 0 0 0;width:100%;height:96px;display:block}
+.paso{position:absolute;bottom:var(--y);left:var(--x);width:30px;height:30px;margin-left:-15px}
+.paso svg{display:block;width:100%;height:100%;transform:rotate(var(--r))}
+.paso.perro{color:var(--negro)}
+.paso.gato{color:var(--fucsia);width:27px;height:27px;margin-left:-13px}
+@media (max-width:620px){.paso.salta-cel{display:none}}
 @media (prefers-reduced-motion:no-preference){
-  .paso .pata{animation:pisar .45s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--i) * .3s + .5s)}
-  .paso .brote{animation:brotar .8s cubic-bezier(.2,.8,.3,1.1) both;animation-delay:calc(var(--i) * .3s + 2.2s)}
+  .paso svg{animation:pisar .45s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--i) * .32s + .5s)}
 }
 @keyframes pisar{from{opacity:0;transform:rotate(var(--r)) scale(.3)}}
-@keyframes brotar{from{opacity:0;transform:scale(.1,0)}}
 
 /* --- secciones --- */
 .seccion{padding:clamp(48px,8vw,88px) 0}
@@ -188,7 +185,6 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 .cat-ic svg{width:36px;height:36px;stroke-width:2.4}
 .cat[data-c="gatos"] .cat-ic{background:var(--fucsia-suave);color:var(--fucsia-osc)}
 .cat[data-c="accesorios"] .cat-ic{background:#F3EFE6;color:var(--negro)}
-.cat[data-c="vivero"] .cat-ic{background:var(--tierra-clara);color:var(--tierra)}
 .cat h3{font-size:1.65rem;color:var(--negro)}
 .cat > p{margin:.2em 0 .6em;color:var(--gris);font-size:.93rem}
 .items{list-style:none;margin:0;padding:0}
@@ -237,7 +233,7 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 .quitar{width:44px;height:44px;border-radius:50%;border:0;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--gris);flex:none}
 .quitar:hover{background:#F3EFE6;color:var(--negro)}
 .vacio{text-align:center;padding:16px 6px 8px;color:var(--gris)}
-.vacio .ic{width:40px;height:40px;color:var(--tierra-media)}
+.vacio .ic{width:40px;height:40px;color:#B9B2A6}
 .vacio p{margin:.4em 0 .9em}
 .agregar-otro{margin-top:12px;width:100%}
 .resumen{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-top:14px;padding-top:12px;border-top:2px solid var(--negro);font-weight:800}
@@ -269,17 +265,6 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
 .aviso-envio{margin:10px 0 0;font-size:.84rem;color:var(--gris);text-align:center}
 .aviso-demo{margin:10px 0 0;font-size:.84rem;color:#5B2140;background:var(--fucsia-suave);border-radius:12px;padding:8px 12px;text-align:center;font-weight:700}
 .aviso-demo[hidden]{display:none}
-
-/* --- vivero --- */
-.vivero{background:var(--tierra-clara);position:relative;overflow:hidden}
-.vivero .volanta{color:var(--tierra)}
-.viv-grid{display:grid;gap:22px;grid-template-columns:1fr}
-@media (min-width:880px){.viv-grid{grid-template-columns:1fr 1fr;align-items:center}}
-.vivero p{max-width:34em;color:#3D2A1C}
-.viv-fotos{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-.viv-fotos .foto-pend{min-height:170px;background:repeating-linear-gradient(-45deg,#E3D1B8 0 10px,#EFE3D2 10px 20px);border-color:#DCC7AA;color:#6B4A30}
-.viv-fotos .foto-pend:first-child{grid-row:span 2;min-height:352px}
-@media (max-width:520px){.viv-fotos .foto-pend:first-child{min-height:250px}.viv-fotos .foto-pend{min-height:119px}}
 
 /* --- sucursales --- */
 .sucs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
@@ -344,11 +329,11 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
   <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 7z"/><circle cx="7.6" cy="8.2" r="1.4"/></symbol>
   <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-pata" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><path d="M12 12.6c-2.9 0-5.2 2.6-5.2 4.7 0 1.5 1.2 2.3 2.6 2.3 1 0 1.7-.5 2.6-.5s1.6.5 2.6.5c1.4 0 2.6-.8 2.6-2.3 0-2.1-2.3-4.7-5.2-4.7z"/><ellipse cx="6.2" cy="10.4" rx="1.8" ry="2.3" transform="rotate(-18 6.2 10.4)"/><ellipse cx="9.7" cy="6.6" rx="1.9" ry="2.5"/><ellipse cx="14.3" cy="6.6" rx="1.9" ry="2.5"/><ellipse cx="17.8" cy="10.4" rx="1.8" ry="2.3" transform="rotate(18 17.8 10.4)"/></g></symbol>
+  <symbol id="i-pata-gato" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><path d="M12 12.8c-2.4 0-4.6 2.3-4.6 4.4 0 1.5 1 2.4 2.3 2.4.9 0 1.5-.4 2.3-.4s1.4.4 2.3.4c1.3 0 2.3-.9 2.3-2.4 0-2.1-2.2-4.4-4.6-4.4z"/><circle cx="7.2" cy="10.8" r="1.8"/><circle cx="10.2" cy="7.6" r="1.9"/><circle cx="13.8" cy="7.6" r="1.9"/><circle cx="16.8" cy="10.8" r="1.8"/></g></symbol>
   <!-- categorías -->
   <symbol id="c-perros" viewBox="0 0 48 48"><path d="M15 14q9-5 18 0 4 8 2 16-3 10-11 10t-11-10q-2-8 2-16z"/><path d="M15 14q-7-2-9 8 0 6 5 7zM33 14q7-2 9 8 0 6-5 7z"/><circle cx="19.5" cy="23" r="1.3" fill="currentColor"/><circle cx="28.5" cy="23" r="1.3" fill="currentColor"/><ellipse cx="24" cy="32" rx="5" ry="3.8"/><path d="M22.3 30.2h3.4l-1.7 1.9z" fill="currentColor"/></symbol>
   <symbol id="c-gatos" viewBox="0 0 48 48"><path d="M10 21V8l9 7q5-1.6 10 0l9-7v13q3 6 0 12-5 7-14 7t-14-7q-3-6 0-12z"/><circle cx="18" cy="25" r="1.4" fill="currentColor"/><circle cx="30" cy="25" r="1.4" fill="currentColor"/><path d="M22.5 30h3l-1.5 2z" fill="currentColor"/><path d="M5 29h8M5.5 33.5l7.5-2M43 29h-8M42.5 33.5l-7.5-2"/></symbol>
   <symbol id="c-accesorios" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14"/><path d="M13.5 14.5q9 9.5 0 19M34.5 14.5q-9 9.5 0 19"/></symbol>
-  <symbol id="c-vivero" viewBox="0 0 48 48"><path d="M15 28h18l-2.5 12h-13z"/><path d="M13 28h22M24 28V16"/><path d="M24 21q-10-1-11-11 9 0 11 9"/><path d="M24 18q5-9 13-9-1 9-13 12"/></symbol>
 </svg>
 
 <p class="previa" id="previa" hidden></p>
@@ -357,7 +342,7 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
   <div class="envolver">
     <a class="marca" href="#inicio" aria-label="Como Perro y Gato, ir al inicio">
       <b>Como Perro <i>y</i> Gato</b>
-      <small>Pet Shop y Vivero</small>
+      <small>Pet Shop · Villa Primera</small>
     </a>
     <span class="estado" id="estado-cab" aria-live="polite">Horario</span>
     <a class="cab-pedido" href="#pedido"><svg class="ic"><use href="#i-bolsa"/></svg><span>Tu pedido</span><output id="cuenta-cab"></output></a>
@@ -370,11 +355,10 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
 <section class="portada" aria-labelledby="titulo">
   <div class="envolver">
     <div>
-      <span class="ciudad"><svg class="ic"><use href="#i-pin"/></svg>Mar del Plata</span>
+      <span class="ciudad"><svg class="ic"><use href="#i-pin"/></svg>Villa Primera · Mar del Plata</span>
       <!-- LOGO: recorte de la foto del cartel (provisorio hasta tener el archivo original) -->
       <h1 id="titulo"><img src="img/logo-cartel.webp" width="598" height="560" alt="Pet Shop Como Perro y Gato"></h1>
-      <p class="bajada"><span class="mas">y</span> <span class="tag vivero">Vivero</span></p>
-      <p class="lead">Alimento y accesorios para tu perro y tu gato, y plantas para tu casa. Armá el pedido acá y te confirmamos precio y disponibilidad por WhatsApp.</p>
+      <p class="lead">Alimento y accesorios para tu perro y tu gato. Armá el pedido acá y te confirmamos precio y disponibilidad por WhatsApp.</p>
       <div class="hoy">
         <span class="estado" id="estado-portada">Horario</span>
         <span class="horario" id="horario-portada"></span>
@@ -386,25 +370,17 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
       </div>
     </div>
 
-    <!-- Ilustración propia (no es el logo del local): maceta, gato y huellas -->
+    <!-- Ilustración propia (no es el logo del local): comedero, gato y huellas de perro -->
     <div class="ilustra" aria-hidden="true">
       <svg viewBox="0 0 400 380">
         <circle cx="200" cy="190" r="168" fill="#7EBC06"/>
-        <!-- planta -->
-        <g fill="#2F5D14">
-          <path d="M150 238c-8-40-42-62-86-58 6 40 40 64 86 58z"/>
-          <path d="M152 236c-28-44-20-96 14-128 26 40 18 92-14 128z"/>
-          <path d="M156 238c10-46 46-70 92-66-8 42-46 68-92 66z"/>
-        </g>
-        <g fill="none" stroke="#7EBC06" stroke-width="3" stroke-linecap="round" opacity=".8">
-          <path d="M150 236c-22-18-44-32-74-50"/>
-          <path d="M153 232c0-36 6-74 13-118"/>
-          <path d="M158 234c26-18 52-34 80-56"/>
-        </g>
-        <!-- maceta -->
-        <path d="M104 236h104l-14 92h-76z" fill="#8A4F2A"/>
-        <rect x="96" y="226" width="120" height="24" rx="8" fill="#A9653A"/>
-        <path d="M118 270c20 6 56 6 78 0" stroke="#A9653A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- comedero con alimento -->
+        <ellipse cx="160" cy="330" rx="86" ry="10" fill="#17151A" opacity=".15"/>
+        <path d="M108 276c18-30 86-30 104 0z" fill="#8A4F2A"/>
+        <g fill="#A9653A"><circle cx="128" cy="270" r="6"/><circle cx="146" cy="262" r="6"/><circle cx="164" cy="258" r="6"/><circle cx="182" cy="262" r="6"/><circle cx="198" cy="270" r="6"/><circle cx="156" cy="272" r="5"/><circle cx="174" cy="272" r="5"/></g>
+        <path d="M92 282h136l-18 46h-100z" fill="#C02A6B"/>
+        <rect x="86" y="272" width="148" height="18" rx="9" fill="#D8458A"/>
+        <use href="#i-pata" x="146" y="292" width="28" height="28" color="#FFFFFF" opacity=".9"/>
         <!-- gato sentado -->
         <path d="M300 336c34 0 46-38 36-74-6-26-17-44-22-58 10-8 13-24 9-38l6-32-22 16c-8-3-18-3-26 0l-18-16 4 32c-6 16 0 32 14 40-10 28-22 78-18 118 2 12 14 12 37 12z" fill="#17151A"/>
         <path d="M334 322c34-4 46-38 26-58" fill="none" stroke="#17151A" stroke-width="14" stroke-linecap="round"/>
@@ -416,16 +392,16 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
         <circle cx="296" cy="230" r="6" fill="#F0DC4A"/>
         <!-- huellas de perro -->
         <g fill="#17151A" opacity=".85">
-          <use href="#i-pata" x="228" y="300" width="30" height="30" transform="rotate(-12 243 315)"/>
-          <use href="#i-pata" x="60" y="300" width="26" height="26" transform="rotate(10 73 313)" opacity=".7"/>
+          <use href="#i-pata" x="56" y="200" width="26" height="26" transform="rotate(60 69 213)" opacity=".55"/>
+          <use href="#i-pata" x="86" y="232" width="28" height="28" transform="rotate(70 100 246)" opacity=".75"/>
         </g>
       </svg>
     </div>
   </div>
 
-  <!-- El guiño: huellas que pisan la tierra y de cada una brota una plantita (una sola vez, al cargar) -->
+  <!-- El guiño: huellas de perro (izquierda) y de gato (derecha) que se cruzan (una sola vez, al cargar) -->
   <div class="sendero" aria-hidden="true" id="sendero">
-    <svg class="tierra" viewBox="0 0 1200 96" preserveAspectRatio="none"><path d="M0 34C120 14 240 40 360 30s250-26 380-8 260 22 460 2V96H0z" fill="#EBDCC6"/><path d="M0 52C160 36 300 58 470 48s300-22 460-6 190 14 270 4V96H0z" fill="#DCC6A6"/></svg>
+    <svg class="vereda" viewBox="0 0 1200 96" preserveAspectRatio="none"><path d="M0 34C120 14 240 40 360 30s250-26 380-8 260 22 460 2V96H0z" fill="#EEF6DC"/><path d="M0 52C160 36 300 58 470 48s300-22 460-6 190 14 270 4V96H0z" fill="#DCEDBA"/></svg>
   </div>
 </section>
 
@@ -503,7 +479,7 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
         </div>
         <div class="campo solo-envio" id="campo-entre" hidden>
           <label for="f-entre">Entre calles <span class="opc">(opcional)</span></label>
-          <input type="text" id="f-entre" placeholder="Ej.: entre Olazábal y Garay">
+          <input type="text" id="f-entre" placeholder="Ej.: entre Ituzaingó y Garay">
         </div>
         <div class="campo" id="campo-nombre">
           <label for="f-nombre">Tu nombre</label>
@@ -526,27 +502,6 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
   </div>
 </section>
 
-<!-- ================= VIVERO ================= -->
-<section class="seccion vivero" id="vivero" aria-labelledby="t-vivero">
-  <div class="envolver viv-grid">
-    <div>
-      <span class="volanta">Además</span>
-      <h2 id="t-vivero">El vivero</h2>
-      <p>En Como Perro y Gato también hay plantas. Contanos cuál buscás, o para qué lugar de tu casa, y te decimos qué tenemos.</p>
-      <p id="vivero-donde"></p>
-      <div class="acciones">
-        <button type="button" class="btn btn-pedido" id="sumar-planta"><svg class="ic"><use href="#i-mas"/></svg>Sumar una planta al pedido</button>
-        <a class="btn btn-borde" id="wa-vivero" href="#" target="_blank" rel="noopener">Preguntar por una planta</a>
-      </div>
-    </div>
-    <div class="viv-fotos" aria-label="Fotos del vivero (pendientes)">
-      <div class="foto-pend"><svg class="ic"><use href="#i-camara"/></svg>Foto del vivero pendiente</div>
-      <div class="foto-pend"><svg class="ic"><use href="#i-camara"/></svg>Foto pendiente</div>
-      <div class="foto-pend"><svg class="ic"><use href="#i-camara"/></svg>Foto pendiente</div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= LOCALES ================= -->
 <section class="seccion" id="locales" aria-labelledby="t-locales">
   <div class="envolver">
@@ -565,8 +520,8 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
 <!-- ================= PIE ================= -->
 <footer class="pie oscuro">
   <div class="envolver">
-    <a class="marca" href="#inicio"><img src="img/logo-cartel.webp" width="598" height="560" alt="" loading="lazy"><span><b>Como Perro <i>y</i> Gato</b><small>Pet Shop y Vivero · Mar del Plata</small></span></a>
-    <div class="redes" id="redes"></div>
+    <a class="marca" href="#inicio"><img src="img/logo-cartel.webp" width="598" height="560" alt="" loading="lazy"><span><b>Como Perro <i>y</i> Gato</b><small>Pet Shop · Villa Primera, Mar del Plata</small></span></a>
+    <div class="redes" id="redes" hidden></div>
     <p class="demo" id="pie-demo" hidden>Esta es una <b>vista previa</b> de la página, armada para mostrársela al local. Los datos marcados <span class="chip-ac">A confirmar</span> todavía no los confirmó el dueño, y los pedidos de prueba van a un número de prueba, no al local.</p>
     <div class="pie-credito">
       <p>Diseñado por <b>connectHUB</b></p>
@@ -593,36 +548,31 @@ const DEMO = true;                    // aviso en el pie y debajo del botón de 
 const MOSTRAR_PRECIOS = false;        // no hay precios confirmados: todo "a confirmar por WhatsApp"
 
 // WhatsApp de PRUEBA (el de Mateo). Los pedidos de la demo NO le llegan al local.
-// Encontrados, NO puestos todavía: 0223 565-5986 (Google Maps) y 223 598-2258 (vidriera, foto del frente).
+// Encontrado, NO puesto todavía (Mateo: "todavía no lo pongas"): 223 598-2258, el de la vidriera.
 const WHATSAPP_DEMO = "5492235337853";
 
 const LOCAL = {
   nombre: "Como Perro y Gato",
-  bajada: "Pet Shop y Vivero",
+  bajada: "Pet Shop",
   ciudad: "Mar del Plata",
-  instagram: "https://www.instagram.com/comoperroygato__/",
-  facebook: "https://www.facebook.com/comoperroygatomdq",
+  // Redes: "" = no se muestran. OJO: @comoperroygato__ y facebook.com/comoperroygatomdq son de OTRO
+  // pet shop con el mismo nombre (San Martín 4090, con vivero). No ponerlas.
+  instagram: "",
+  facebook: "",
 };
 
 // --- Horario. Formato "09:00-19:00"; "cerrado"; varios tramos: "09:00-13:00, 16:00-20:00".
-//     Si el cierre es menor que la apertura, pasa la medianoche.
-//     Fuente: bio de Instagram (lunes a sábado de 9 a 19). confirmado:false muestra el chip "A confirmar".
-//     null = "Horario a confirmar" y no se calcula abierto/cerrado.
-const HORARIO = {
-  lun: "09:00-19:00", mar: "09:00-19:00", mie: "09:00-19:00", jue: "09:00-19:00",
-  vie: "09:00-19:00", sab: "09:00-19:00", dom: "cerrado",
-  confirmado: false,
-};
+//     Si el cierre es menor que la apertura, pasa la medianoche. confirmado:false muestra el chip "A confirmar".
+//     null = "Horario a confirmar" y no se calcula abierto/cerrado (HOY: no tenemos el horario de este local;
+//     el "lunes a sábado de 9 a 19" que había era del otro pet shop).
+//     Ejemplo para cuando lo pase el dueño:
+//     { lun: "09:00-13:00, 16:00-20:00", mar: "…", mie: "…", jue: "…", vie: "…", sab: "09:00-13:00", dom: "cerrado", confirmado: true }
+const HORARIO = null;
 
 // --- Sucursales. Funciona con 1 o con 2: mostrar:false esconde una (y desaparece el "¿a qué local?").
-//     whatsapp: hoy el de prueba en las dos. horario: null = usa HORARIO.
+//     whatsapp: hoy el de prueba. horario: null = usa HORARIO.
 //     confirmada:false = chip "A confirmar". foto: "img/frente-xxx.webp" cuando haya.
 const SUCURSALES = [
-  { id: "san-martin", nombre: "San Martín", direccion: "San Martín 4090", referencia: "Esquina Olazábal",
-    whatsapp: WHATSAPP_DEMO, horario: null, confirmada: false, foto: "",
-    nota: "",
-    maps: "https://www.google.com/maps/search/?api=1&query=San+Mart%C3%ADn+4090%2C+Mar+del+Plata",
-    mostrar: true },
   { id: "bronzini", nombre: "Villa Primera", direccion: "Teodoro Bronzini e Ituzaingó", referencia: "Villa Primera",
     whatsapp: WHATSAPP_DEMO, horario: null, confirmada: false, foto: "",
     nota: "",
@@ -630,26 +580,23 @@ const SUCURSALES = [
     mostrar: true },
 ];
 
-// --- Vivero: en qué local está. "" = no se dice. Ej.: "El vivero está en el local de San Martín."
-const VIVERO_DONDE = "";
-
-// --- Envío a domicilio (Google Maps dice "Entrega a domicilio"). Costo y zona: a confirmar.
+// --- Envío a domicilio: lo pidió Mateo para la demo; NO sabemos si este local hace envíos. hay:false lo saca.
 const ENVIO = { hay: true, texto: "Costo y zona de envío a confirmar por WhatsApp.", confirmado: false };
 
 // --- Medios de pago: los puso Claude (efectivo, transferencia, débito). A confirmar con el dueño.
 const PAGOS = ["Efectivo", "Transferencia", "Tarjeta de débito"];
 
 // --- Promos. confirmada:false = chip "A confirmar". [] = la franja desaparece.
-//     "10 % en efectivo": cartel de la vidriera ("Pago efectivo 10 % reintegro en alimentos") y su tienda online.
+//     "10 % en efectivo": cartel de la vidriera de este local ("Pago efectivo 10 % reintegro en alimentos").
 const PROMOS = [
   { titulo: "Pagando en efectivo, 10 % de reintegro en alimentos", detalle: "", confirmada: false },
 ];
-const PROMOS_INSTAGRAM = true;   // agrega "Mirá las promos del momento en Instagram"
+const PROMOS_INSTAGRAM = true;   // agrega "Mirá las promos del momento en Instagram" (solo si LOCAL.instagram tiene algo)
 
 // --- Categorías y productos (LISTA DE REFERENCIA, sin precios).
 //     k: clave única (no cambiarla: es lo que se guarda en el pedido) · n: nombre · d: detalle chico
 //     ej: ejemplo que aparece en el pedido para la presentación · p: precio (solo si MOSTRAR_PRECIOS)
-//     visto:true = visto en la vidriera o en su tienda online (el resto son clásicos del rubro). Ver CLAUDE.md.
+//     visto:true = visto en la vidriera de la foto del frente (el resto son clásicos del rubro). Ver CLAUDE.md.
 const CATEGORIAS = [
   { id: "perros", nombre: "Perros", texto: "Para tu perro, cachorro o adulto.", items: [
     { k: "perro-alimento", n: "Alimento balanceado para perro", d: "Cachorro, adulto o senior", ej: "Ej.: adulto raza mediana, bolsa de 15 kg", visto: true },
@@ -669,16 +616,11 @@ const CATEGORIAS = [
     { k: "acc-transportadoras", n: "Transportadoras", d: "", ej: "Ej.: para gato" },
     { k: "acc-higiene", n: "Higiene", d: "Shampoo, cepillos, bolsitas", ej: "Ej.: cepillo para pelo largo" },
   ]},
-  { id: "vivero", nombre: "Vivero", texto: "Plantas y todo para cuidarlas.", items: [
-    { k: "viv-interior", n: "Plantas de interior", d: "", ej: "Ej.: una para poca luz" },
-    { k: "viv-exterior", n: "Plantas de exterior", d: "", ej: "Ej.: para balcón al sol" },
-    { k: "viv-macetas", n: "Macetas", d: "", ej: "Ej.: de barro, 20 cm" },
-    { k: "viv-tierra", n: "Tierra y sustratos", d: "", ej: "Ej.: bolsa de 10 litros" },
-  ]},
 ];
 
-// --- Marcas de alimento (sin precios). Fuente: su tienda online; Sileoni, del cartel del frente.
-const MARCAS = ["Royal Canin", "Eukanuba", "Excellent", "Agility", "Estampa", "Dogui", "Bonelo", "Sileoni"];
+// --- Marcas de alimento (sin precios). Las que se ven en el frente: Sileoni (carteles),
+//     Royal Canin (cartel de la vidriera) y Bonelo (pizarrón). Agregar las que diga el dueño.
+const MARCAS = ["Sileoni", "Royal Canin", "Bonelo"];
 
 /* ==========================================================================
    De acá para abajo, el funcionamiento. Para cambiar datos no hace falta tocarlo.
@@ -801,7 +743,7 @@ function pintarCatalogo() {
     $$(".filtro").forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
     const f = b.dataset.f;
     $$(".cat").forEach((c) => { c.hidden = !!f && c.dataset.c !== f; });
-    $("#marcas").hidden = !!f && f === "vivero" || (!!f && f === "accesorios");
+    $("#marcas").hidden = f === "accesorios";
   });
   if (MARCAS.length) $("#marcas-lista").innerHTML = MARCAS.map((m) => itemHTML("marca-" + slug(m), m, "", null)).join("");
   else $("#marcas").hidden = true;
@@ -924,7 +866,7 @@ function validar(suave) {
 /* ---------- el mensaje ---------- */
 function mensaje(d) {
   const L = ["*Pedido web · " + LOCAL.nombre + "*"];
-  if (d.suc) L.push("Local: " + d.suc.nombre + " (" + d.suc.direccion + ")");
+  if (d.suc && VISIBLES.length > 1) L.push("Local: " + d.suc.nombre + " (" + d.suc.direccion + ")");
   L.push("", "*Productos*");
   Object.keys(pedido.items).forEach((k) => {
     const det = (pedido.det[k] || "").trim();
@@ -960,7 +902,6 @@ paso("vista previa", () => {
 paso("links de WhatsApp", () => {
   $("#wa-portada").href = linkWA(WA_GENERAL, SALUDO);
   $("#wa-flota").href = linkWA(WA_GENERAL, SALUDO);
-  $("#wa-vivero").href = linkWA(WA_GENERAL, "Hola! Quería consultar por una planta: ");
   // el botón verde: sin pedido abre el chat; con pedido lleva al pedido
   $("#wa-flota").addEventListener("click", (e) => {
     if (lineasTotal() > 0) { e.preventDefault(); $("#pedido").scrollIntoView({ behavior: quieto() ? "auto" : "smooth" }); }
@@ -972,6 +913,7 @@ paso("abierto ahora", () => {
     const e = estadoDe(HORARIO);
     [["#estado-cab", e.corto], ["#estado-portada", e.texto]].forEach(([sel, t]) => {
       const el = $(sel); el.className = "estado " + e.clase; el.textContent = t;
+      if (sel === "#estado-cab") el.hidden = !HORARIO;
     });
     $$("[data-estado-suc]").forEach((el) => {
       const s = SUCURSALES.find((x) => x.id === el.dataset.estadoSuc); const es = estadoDe(horarioDe(s));
@@ -1036,7 +978,6 @@ paso("pedido", () => {
     const sig = $("#lineas .mm-b, #lineas input") || $("#agregar-otro"); sig && sig.focus();
   });
   $("#agregar-otro").addEventListener("click", () => agregarLibre("", true));
-  $("#sumar-planta").addEventListener("click", () => agregarLibre("Planta: ", true));
   $("#form").addEventListener("input", () => { guardarForm(); validar(true); actualizarEnviar(); });
   $("#form").addEventListener("change", () => { actualizarEnvio(); guardarForm(); validar(true); actualizarEnviar(); });
   $("#form").addEventListener("submit", (e) => e.preventDefault());
@@ -1046,11 +987,6 @@ paso("pedido", () => {
   });
   window.addEventListener("resize", pintarCuentas);
   actualizarEnviar();
-});
-
-paso("vivero", () => {
-  if (VIVERO_DONDE) $("#vivero-donde").textContent = VIVERO_DONDE;
-  else $("#vivero-donde").innerHTML = "<b>¿En qué local está el vivero?</b> " + CHIP;
 });
 
 paso("sucursales", () => {
@@ -1083,16 +1019,20 @@ paso("redes", () => {
   if (LOCAL.instagram) r.push('<a href="' + esc(LOCAL.instagram) + '" target="_blank" rel="noopener">' + ic("i-ig") + "Instagram</a>");
   if (LOCAL.facebook) r.push('<a href="' + esc(LOCAL.facebook) + '" target="_blank" rel="noopener">' + ic("i-fb") + "Facebook</a>");
   $("#redes").innerHTML = r.join("");
+  $("#redes").hidden = !r.length;
 });
 
-paso("guiño: pisadas que brotan", () => {
-  // posiciones (en % del ancho) y altura sobre la tierra; alternan pie izquierdo y derecho
-  const PISADAS = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95];
-  const brote = '<svg class="brote" viewBox="0 0 18 32"><path d="M9 32V12" stroke="#2F5D14" stroke-width="2.4" stroke-linecap="round"/>' +
-    '<path d="M9 16C4 16 1 12 1 7c5 0 8 4 8 9z" fill="#7EBC06"/><path d="M9 13c0-6 3-10 8-11 0 6-3 10-8 11z" fill="#2F5D14"/></svg>';
-  $("#sendero").insertAdjacentHTML("beforeend", PISADAS.map((x, i) =>
-    '<span class="paso" style="--i:' + i + ";--x:" + x + "%;--y:" + (i % 2 ? 10 : 28) + "px;--r:" + (i % 2 ? 100 : 80) + 'deg">' +
-    '<svg class="pata" viewBox="0 0 24 24"><use href="#i-pata"/></svg>' + brote + "</span>").join(""));
+paso("guiño: como perro y gato", () => {
+  // x en % del ancho; perro de izquierda a derecha (abajo), gato de derecha a izquierda (arriba).
+  // Pisan de a uno por vez, alternados: se cruzan en el medio. m:true = también en el celular.
+  const PERRO = [4, 13, 22, 31, 40, 49, 58];
+  const GATO  = [96, 88, 80, 72, 64, 56, 48];
+  const pasos = [];
+  PERRO.forEach((x, i) => pasos.push({ q: "perro", s: "i-pata", x, i: i * 2, y: i % 2 ? 8 : 22, r: 90 + (i % 2 ? 8 : -8), m: i % 2 === 0 }));
+  GATO.forEach((x, i) => pasos.push({ q: "gato", s: "i-pata-gato", x, i: i * 2 + 1, y: i % 2 ? 44 : 56, r: -90 + (i % 2 ? -8 : 8), m: i % 2 === 0 }));
+  $("#sendero").insertAdjacentHTML("beforeend", pasos.map((p) =>
+    '<span class="paso ' + p.q + (p.m ? "" : " salta-cel") + '" style="--i:' + p.i + ";--x:" + p.x + "%;--y:" + p.y + "px;--r:" + p.r + 'deg">' +
+    '<svg viewBox="0 0 24 24"><use href="#' + p.s + '"/></svg></span>').join(""));
 });
 
 paso("ficha para Google", () => {
@@ -1104,7 +1044,7 @@ paso("ficha para Google", () => {
   const local = (s) => ({ "@type": "PetStore", name: LOCAL.nombre + " · " + s.nombre,
     address: { "@type": "PostalAddress", streetAddress: s.direccion, addressLocality: "Mar del Plata", addressRegion: "Buenos Aires", addressCountry: "AR" },
     openingHoursSpecification: horas(horarioDe(s)) });
-  const ficha = { "@context": "https://schema.org", "@type": "PetStore", name: LOCAL.nombre, description: "Pet shop y vivero en Mar del Plata.",
+  const ficha = { "@context": "https://schema.org", "@type": "PetStore", name: LOCAL.nombre, description: "Pet shop en Villa Primera, Mar del Plata.",
     sameAs: [LOCAL.instagram, LOCAL.facebook].filter(Boolean), paymentAccepted: PAGOS.join(", ") };
   if (VISIBLES.length === 1) Object.assign(ficha, local(VISIBLES[0]), { name: LOCAL.nombre });
   else ficha.department = VISIBLES.map(local);

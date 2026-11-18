@@ -4,76 +4,70 @@ Memoria del proyecto para cualquier sesión de Claude que lo retome. Se trabaja
 con la skill `metodo-web-negocio-local`. **Este archivo puede quedar en un repo
 público:** nada de montos del abono, contraseñas ni datos privados del dueño.
 
-## ⚠️ DUDA PRINCIPAL: ¿una o dos sucursales?
+## ⚠️ HAY OTRO PET SHOP CON EL MISMO NOMBRE: no mezclar datos
 
-Mateo vio el local **en persona en Teodoro Bronzini e Ituzaingó** (Villa Primera).
-Todo lo online (Google Maps, Instagram @comoperroygato__ y su tienda online) da
-**San Martín 4090** (San Martín y Olazábal). **No sabemos** si Bronzini es una
-segunda sucursal del mismo negocio o **otro negocio con el mismo nombre**.
+Este proyecto es el pet shop **Como Perro y Gato de Teodoro Bronzini e
+Ituzaingó** (Villa Primera), el que Mateo vio en persona. **Un solo local y sin
+vivero.**
 
-- La web está armada para las dos: `SUCURSALES` con `mostrar: true` en ambas.
-  Si es una sola, poner `mostrar: false` en la que no va y desaparecen la
-  tarjeta, el "¿A qué local?" del pedido y su entrada en la ficha de Google
-  (probado).
-- Pistas a favor de "mismo negocio": la vidriera de la foto del frente tiene el
-  cartel "Pago efectivo 10 % reintegro en alimentos", y la tienda online dice
-  "10 % OFF en efectivo". Pista en contra (o de dos sucursales): el WhatsApp de
-  la vidriera (223 598-2258) **no es** el teléfono de Google Maps (0223 565-5986).
-- La foto del frente que mandó Mateo (18/11/2026) **no dice de qué dirección
-  es**. Probablemente Bronzini (es la que vio en persona), sin confirmar.
-- Mientras no se sepa, el nombre "Villa Primera" para la de Bronzini es mío
-  (barrio que dijo Mateo), no del local.
+Hay **otro negocio** que se llama igual en **San Martín 4090** (San Martín y
+Olazábal), **con vivero**. Mateo lo confirmó el 18/11/2026: "el vivero y la
+sucursal de San Martín no son de este pet shop". Todo esto es **del otro** y
+**no va en la web**:
+
+- La dirección San Martín 4090 y el teléfono de Google Maps 0223 565-5986.
+- La ficha de Google (4,7 estrellas, 64 reseñas, "Entrega a domicilio").
+- El Instagram @comoperroygato__ (tiene la destacada "Vivero" y la ubicación
+  de San Martín), con su horario de la bio (lunes a sábado 9 a 19).
+- El Facebook facebook.com/comoperroygatomdq (Mateo lo encontró junto con lo
+  anterior: se trata como del otro hasta que el dueño diga que es suyo).
+- La tienda online comoperroygato.com, sus marcas y su "10 % OFF en efectivo".
+
+Al buscar algo nuevo online de "Como Perro y Gato", **revisar que sea de Bronzini**.
 
 ## Qué es
 
-Web de una página para **Como Perro y Gato**, pet shop y vivero de Mar del
-Plata: alimento y accesorios para perros y gatos, y plantas.
+Web de una página para **Como Perro y Gato**, pet shop en Villa Primera, Mar
+del Plata: alimento y accesorios para perros y gatos.
 
 - Estado: **demo de venta (fase 0), todavía no es cliente**. Armada el 18/11/2026.
 - Sitio: sin dominio ni publicación todavía.
 - Repo: `berchotmateo-spec/como-perro-y-gato`, rama de trabajo `claude/relaxed-planck-ci1kz7`.
-- Vista previa (Artifact, privada): https://claude.ai/artifact/WfXrpRJ33jyFa9YkrRnuFP — se arma con `python3 vista-previa.py <carpeta> "Como Perro y Gato"` y se publica siempre en la misma ruta (desde otra conversación, pasando este link).
+- Vista previa (Artifact): https://claude.ai/artifact/WfXrpRJ33jyFa9YkrRnuFP — se arma con `python3 vista-previa.py <carpeta> "Como Perro y Gato"` y se publica siempre en la misma ruta, con `img/logo-cartel.webp` en `files` (desde otra conversación, pasando este link). Hoy está compartida como "cualquiera con el link".
 
 Marcas de demo (se sacan el día que el dueño compra):
 `VISTA_PREVIA` (barra amarilla arriba), `DEMO = true` (aviso en el pie y debajo
 del botón de pedido), `<meta name="robots" content="noindex">`, el WhatsApp de
-Mateo en las dos sucursales (`WHATSAPP_DEMO`), y los chips punteados "A confirmar".
+Mateo (`WHATSAPP_DEMO`), y los chips punteados "A confirmar".
 
 ## Datos del local
 
 | Dato | Valor en la web | Fuente | Estado |
 |---|---|---|---|
-| Nombre | Como Perro y Gato · "Pet Shop y Vivero" | cartel del frente, Instagram | ok |
-| Sucursal 1 | San Martín 4090 (esquina Olazábal) | Google Maps, Instagram y su tienda online | a confirmar |
-| Sucursal 2 | Teodoro Bronzini e Ituzaingó (Villa Primera) | Mateo, en persona | **duda principal** |
-| Horario | Lunes a sábado 9 a 19 h; domingo cerrado (las dos) | bio de Instagram | a confirmar (chip) |
-| Teléfono Google | 0223 565-5986 | Google Maps | **encontrado, no puesto** |
-| WhatsApp vidriera | 223 598-2258 | foto del frente (vidriera); Mateo lo volvió a mostrar el 18/11/2026 | **encontrado, no puesto** (Mateo: "todavía no lo pongas") |
-| WhatsApp en la web | 5492235337853 (el de Mateo) en las dos | demo | se cambia al cerrar |
-| Envío a domicilio | Sí; "costo y zona a confirmar" | Google Maps ("Entrega a domicilio"); su tienda tiene zona de envíos | a confirmar |
+| Nombre | Como Perro y Gato · "Pet Shop" | cartel del frente | ok |
+| Dirección | Teodoro Bronzini e Ituzaingó (Villa Primera) | Mateo, en persona | a confirmar (chip); falta el número |
+| Horario | **"Horario a confirmar"** (`HORARIO = null`: no se calcula abierto/cerrado) | — | falta |
+| WhatsApp vidriera | 223 598-2258 | foto del frente | **encontrado, no puesto** (Mateo: "todavía no lo pongas") |
+| WhatsApp en la web | 5492235337853 (el de Mateo) | demo | se cambia al cerrar |
+| Envío a domicilio | Opción en el pedido, "costo y zona a confirmar" | lo pidió Mateo para la demo | **no sabemos si hacen envíos**; `ENVIO.hay = false` lo saca |
 | Medios de pago | Efectivo, transferencia, débito | **los puso Claude** | a confirmar |
-| Promo | "Pagando en efectivo, 10 % de reintegro en alimentos" | cartel de la vidriera + "10 % OFF en efectivo" de su tienda | a confirmar (chip) |
-| Marcas de alimento | Royal Canin, Eukanuba, Excellent, Agility, Estampa, Dogui, Bonelo | su tienda online | lista de referencia |
-| Marca extra | Sileoni | carteles del frente (foto) | lista de referencia (solo el nombre, ver Diseño) |
-| Google | 4,7 estrellas, 64 reseñas | Google Maps | **no se usa** (ni reseñas ni frases) |
-| Instagram | @comoperroygato__ (~7.600 seguidores). Destacadas: "Dto Especial", "Vivero", "¡Promos!", perros, gatos, ubicación | Instagram | en el pie + "promos del momento" |
-| Facebook | facebook.com/comoperroygatomdq | Facebook | en el pie |
-| Tienda online | comoperroygato.com | Mateo | **no se enlaza ni se nombra** (ver venta) |
-| Coordenadas | — | — | faltan (no hacen falta: "Cómo llegar" busca la dirección) |
+| Promo | "Pagando en efectivo, 10 % de reintegro en alimentos" | cartel de la vidriera de este local | a confirmar (chip) |
+| Marcas | Sileoni, Royal Canin, Bonelo | carteles del frente, cartel de la vidriera y pizarrón | lista de referencia |
+| Redes | ninguna (`LOCAL.instagram` y `facebook` vacíos) | las encontradas son del otro | preguntar si tienen |
+| Logo | `img/logo-cartel.webp`: el cartel del frente, enderezado y limpio | captura que mandó Mateo, 18/11/2026 | provisorio: pedir el archivo original |
+| Coordenadas | — | — | no hacen falta: "Cómo llegar" busca la esquina |
 | Colores | ver Diseño | medidos sobre la foto del frente | provisorios |
-| Logo | `img/logo-cartel.webp`: el cartel "PET SHOP / como Perro y Gato" de la foto, enderezado y limpio | captura que mandó Mateo, 18/11/2026 | provisorio: pedir el archivo original |
 
 ## Productos: qué es real y qué es de referencia
 
 Todo va **sin precio** (`MOSTRAR_PRECIOS = false`) y con la nota visible "Lista
-de referencia". En `CATEGORIAS`, `visto: true` marca lo que tiene fuente:
+de referencia". Tres categorías: Perros, Gatos, Accesorios. En `CATEGORIAS`,
+`visto: true` marca lo que se ve en la vidriera de la foto:
 
-- **Visto** (su tienda online o la vidriera de la foto): alimento para perro y
-  para gato (tienda online; Sileoni perros/gatos urinary en el frente), snacks
-  (Dentastix en la vidriera), sanitarios con tapa y casitas de colores (vidriera).
-- **Clásicos del rubro, sin fuente**: correas y pecheras, juguetes, piedras
-  sanitarias, comederos, camas, transportadoras, higiene, y **todo el vivero**
-  (plantas de interior/exterior, macetas, tierra). Confirmar con el dueño.
+- **Visto:** alimento para perro y para gato (Sileoni perros y gatos urinary,
+  Royal Canin, Bonelo), snacks (Dentastix), sanitarios con tapa, casitas de colores.
+- **Clásicos del rubro, sin fuente:** correas y pecheras, juguetes, piedras
+  sanitarias, comederos, camas, transportadoras, higiene. Confirmar con el dueño.
 - Las marcas no se asignan a perro o gato a propósito: en el pedido el cliente
   escribe para quién es.
 
@@ -82,45 +76,42 @@ de referencia". En `CATEGORIAS`, `visto: true` marca lo que tiene fuente:
 Al sacar algo, buscarlo en **todo** el `index.html` (el JSON-LD lo arma el JS
 con los mismos datos, así que se va solo).
 
-- Precios (no hay ninguno confirmado). **Nunca** copiar los de su tienda online.
-- Fotos de su tienda online, de stock o de IA.
-- Reseñas, estrellas o frases de clientes de Google.
-- Nombrar o criticar la tienda online ni a quien la hizo.
-- Consejos sobre plantas tóxicas para mascotas o cualquier consejo veterinario,
-  salvo que el dueño lo escriba o lo apruebe.
+- **Nada del otro Como Perro y Gato** (ver arriba): ni vivero, ni plantas, ni
+  San Martín, ni sus redes, horario, reseñas, marcas o tienda.
+- Precios (no hay ninguno confirmado).
+- Fotos de stock o de IA. Tampoco la gráfica de Sileoni (es del proveedor).
+- Consejos veterinarios.
 - `aggregateRating` en el JSON-LD.
 
 ## Diseño (decisiones, respetarlas)
 
-- **Identidad sacada del frente real** (foto de Mateo, 18/11/2026), no de un
-  rubro genérico: negro del cartel `#17151A`, **verde lima de la pared**
-  `#7EBC06` (medido), fucsia de "PET SHOP" (`#C02A6B`, oscurecido para que se
-  lea sobre blanco), amarillo de "Como Perro y Gato" `#F0DC4A` (solo sobre
-  negro). Por el vivero: verde hoja `#2F5D14` y tierra `#8A4F2A` / `#EBDCC6`.
-  Provisorios hasta ver el logo original.
-- Letras: **Lilita One** (títulos, gordita como el cartel) + **Manrope** (texto)
-  + **Caveat Brush** (solo la "y" y las volantas). No repetidas en el registro.
-- Distinto de Zoo Center (violeta/naranja, Baloo 2 + Nunito) y de todas las del registro.
-- **Logo** (18/11/2026, Mateo mostró el cartel como "lo que sería el logo"):
-  `img/logo-cartel.webp` es el cartel de la foto **enderezado y limpio**, no
-  redibujado: se corrigió la perspectiva (`herramientas/enderezar.py`) y se le
-  sacaron el reflejo y la bruma dejando tres colores (`herramientas/limpiar-logo.py`).
-  Va grande en la portada (es el `<h1>`, con su `alt`) y chico en el pie. La
-  cabecera sigue con el nombre en letras (en chico el cartel no se lee). Si llega
+- **Identidad sacada del frente real** (foto de Mateo): negro del cartel
+  `#17151A`, **verde lima de la pared** `#7EBC06` (medido), fucsia de "PET SHOP"
+  (`#C02A6B`, oscurecido para que se lea sobre blanco), amarillo de "Como Perro
+  y Gato" `#F0DC4A` (solo sobre negro). Provisorios hasta ver el logo original.
+- Letras: **Lilita One** (títulos) + **Manrope** (texto) + **Caveat Brush**
+  (la "y" de la cabecera y las volantas). No repetidas en el registro.
+- **Logo:** `img/logo-cartel.webp` es el cartel de la foto **enderezado y
+  limpio**, no redibujado (`herramientas/enderezar.py` corrige la perspectiva;
+  `herramientas/limpiar-logo.py` saca el reflejo y deja los tres colores). Va
+  grande en la portada (es el `<h1>`, con su `alt`) y chico en el pie. La
+  cabecera lleva el nombre en letras (en chico el cartel no se lee). Si llega
   el original, reemplaza `img/logo-cartel.webp` con el mismo nombre.
-- Debajo del logo dice solo "y Vivero" (el cartel ya dice PET SHOP).
-- **Sileoni no se usa en el diseño**: el cartel blanco, marrón y rojo que sigue
-  al logo es publicidad del proveedor, no la marca del local. Sileoni aparece
-  solo como nombre en la lista de marcas.
-- La ilustración de la portada (maceta, gato negro con collar, huellas) es propia.
+- **Sileoni no se usa en el diseño:** el cartel que sigue al logo es
+  publicidad del proveedor. Solo aparece como nombre en la lista de marcas.
+- Ilustración propia en la portada: círculo lima, gato negro con collar
+  fucsia, comedero fucsia con alimento y huellas de perro que llegan.
 - Cada forma, un solo trabajo (está arriba del CSS): punteado = "A confirmar";
   rayado diagonal = "foto pendiente"; fucsia = lo que suma al pedido; verde
   oscuro = WhatsApp; lima = fondos, nunca texto sobre blanco.
-- **Guiño:** "pisadas que brotan". Al pie de la portada hay una franja de
-  tierra; unas huellas la cruzan una por una y de cada una brota una plantita
-  (pet shop + vivero). Corre una sola vez al cargar, el estado final queda
-  visible, no come clics y con "reducir movimiento" aparece quieto. En el
-  celular se dibujan la mitad. Posiciones en `PISADAS`.
+- **Guiño: "como perro y gato".** Al pie de la portada, huellas de perro
+  (negras) entran por la izquierda y huellas de gato (fucsia, más chicas y
+  redondas) por la derecha, pisando de a una y alternadas, y se cruzan en el
+  medio. Una sola vez al cargar, el estado final queda visible, no come clics,
+  con "reducir movimiento" aparece quieto; en el celular, la mitad. Posiciones
+  en `PERRO` y `GATO` (paso "guiño").
+  (Hasta el 18/11 el guiño eran "pisadas que brotan" por el vivero: se cambió
+  al saber que el vivero es del otro local.)
 - Fondo claro, celular primero, probado a 1366, 390 y 320 px.
 - Crédito al pie: "Diseñado por connectHUB" con botón a @connect.hub.consultora.
 
@@ -128,26 +119,27 @@ con los mismos datos, así que se va solo).
 
 - Catálogo con − y + por producto y por marca. En "Tu pedido" cada producto
   tiene un campo libre "marca, kilos o presentación" (con un ejemplo propio en
-  `ej`), y "Escribir otro producto" agrega una línea libre con su cantidad. El
-  botón del vivero suma una línea "Planta: …".
-- Datos: local (si hay más de uno visible), retiro o envío (dirección y entre
-  calles solo con envío), nombre, pago (opcional), comentario.
+  `ej`), y "Escribir otro producto" agrega una línea libre con su cantidad.
+- Datos: retiro o envío (dirección y entre calles solo con envío), nombre,
+  pago (opcional), comentario. Si algún día hay más de un local en
+  `SUCURSALES`, aparece "¿A qué local?" y el mensaje dice cuál (probado).
 - El mensaje termina con **"¿Me confirmás precio y disponibilidad?"**.
-- Se guarda en el celular (`cpyg-pedido-v1`), con − y + compartidos entre el
-  catálogo y el pedido. Barra fija abajo en el celular; el botón verde no la tapa.
-- Abierto/cerrado con la hora de Argentina, desde `HORARIO` (por día).
+- Se guarda en el celular (`cpyg-pedido-v1`). Barra fija abajo en el celular;
+  el botón verde no la tapa.
+- Abierto/cerrado con la hora de Argentina, desde `HORARIO` (por día, con
+  turnos partidos). Hoy `null` → "Horario a confirmar" y la cabecera no muestra
+  estado. Probado con un horario de prueba cortado al mediodía.
 
 Mensaje de prueba real (18/11/2026):
 
 ```
 *Pedido web · Como Perro y Gato*
-Local: Villa Primera (Teodoro Bronzini e Ituzaingó)
 
 *Productos*
 • 2 × Alimento balanceado para perro: Adulto raza grande, 15 kg
 • 1 × Alimento Royal Canin: Gato castrado, 3 kg
 • 1 × Pipeta para perro de 10 kg
-• 1 × Planta: potus
+• 1 × Rascador para gato
 
 *Entrega:* Envío a domicilio (costo a confirmar)
 *Dirección:* Ituzaingó 5000
@@ -161,69 +153,62 @@ Local: Villa Primera (Teodoro Bronzini e Ituzaingó)
 
 ## PENDIENTES PARA EL DUEÑO
 
-- [ ] **¿Bronzini e Ituzaingó es sucursal de ustedes?** → `SUCURSALES[1].mostrar`.
-- [ ] Si son dos: **WhatsApp de cada local** (¿el 223 598-2258 de la vidriera es de cuál? ¿el 0223 565-5986 de Google?) → `whatsapp` de cada sucursal.
-- [ ] **Horario** de cada local (hoy lunes a sábado 9 a 19, de la bio de Instagram). ¿Cortan al mediodía? → `HORARIO` o `horario` por sucursal; `confirmado: true`.
-- [ ] **¿En qué local está el vivero?** → `VIVERO_DONDE`.
-- [ ] **Envío**: zona, costo, mínimo y días → `ENVIO`.
+- [ ] **Horario** (días y horas; ¿cortan al mediodía?) → `HORARIO` (hay un ejemplo comentado arriba).
+- [ ] **Dirección exacta** (calle y número) → `SUCURSALES[0].direccion`.
+- [ ] **WhatsApp para pedidos** (¿el 223 598-2258 de la vidriera?) → `whatsapp` cuando Mateo diga.
+- [ ] **¿Hacen envíos?** Zona, costo, mínimo y días → `ENVIO` (o `hay: false`).
 - [ ] **Medios de pago** (los puse yo: efectivo, transferencia, débito) → `PAGOS`.
-- [ ] **10 % en efectivo**: ¿sigue? ¿solo alimentos? ¿descuento o reintegro? → `PROMOS`.
-- [ ] **Qué venden de verdad** en cada categoría y en el vivero → `CATEGORIAS` (sacar lo que no tienen).
-- [ ] **Marcas** que trabajan (hoy: las de su tienda + Sileoni del cartel) → `MARCAS`.
-- [ ] **Fotos reales**: frente de cada local, adentro, y el vivero → `SUCURSALES[].foto` y la sección vivero. La foto del frente de Mateo está en `referencia/` (falta saber de qué local es).
-- [ ] **Logo original** (archivo): hoy es el cartel sacado de una foto → `img/logo-cartel.webp`.
+- [ ] **10 % en efectivo**: ¿sigue? ¿solo alimentos? → `PROMOS`.
+- [ ] **Qué venden de verdad** y qué **marcas** trabajan → `CATEGORIAS` y `MARCAS`.
+- [ ] **¿Tienen Instagram o Facebook propios?** → `LOCAL.instagram` / `facebook`.
+- [ ] **Fotos reales**: frente y adentro → `SUCURSALES[0].foto`. La foto del frente de Mateo podría ir, pero muestra el WhatsApp de la vidriera: esperar a que se pueda publicar ese número.
+- [ ] **Logo original** (archivo).
 - [ ] ¿Quieren **precios** en la web? Solo si los pasa el dueño, con fecha.
 
 ## PROVISORIO
 
 | Qué | Por qué hay duda | Desde |
 |---|---|---|
-| Sucursal de Bronzini | Puede ser otro negocio | 18/11/2026 |
-| Horario de las dos | Sale de la bio de Instagram | 18/11/2026 |
+| Opción de envío a domicilio | No sabemos si hacen envíos | 18/11/2026 |
 | Medios de pago | Los puso Claude (el formulario los necesita) | 18/11/2026 |
-| Productos sin `visto` y todo el vivero | Clásicos del rubro | 18/11/2026 |
-| Colores | Medidos sobre una foto (luz del día, cartel algo gastado) | 18/11/2026 |
+| Productos sin `visto` | Clásicos del rubro | 18/11/2026 |
+| Colores y logo | Sacados de una foto (luz del día, cartel algo gastado) | 18/11/2026 |
+| Nombre "Villa Primera" en la tarjeta del local | Es el barrio que dijo Mateo, no un nombre del local | 18/11/2026 |
 
 ## Para la venta (no va en la web)
 
-**Pendiente de definir hasta saber lo de Bronzini.**
-
-- **Si es el mismo negocio que San Martín 4090:** ya tienen tienda online
-  (comoperroygato.com). No competir con ella ni hablar mal: esta web la suma.
-  El ángulo: pedido directo por WhatsApp sin carrito con precios que mantener
-  (sirve aunque cambien los precios todas las semanas); **las dos sucursales y
-  el vivero en un solo lugar**; abierto/cerrado en vivo; aparecer en Google con
-  dominio propio; y "los cambios del mes los hago yo".
-- **Si Bronzini es otro negocio:** el ángulo es "local sin web": hoy todo pasa
-  por Instagram y el mostrador; la web les da Google, el pedido por WhatsApp y
-  el vivero a la vista.
-- Dato para el video: 4,7 estrellas con 64 reseñas en Google (solo como dato
-  de venta, nunca en la web).
-- Idea para ofrecer: una sección "plantas que conviven con perros y gatos",
-  **solo** si el dueño la escribe o la revisa.
+- **Local sin web**, y encima **con un homónimo**: quien busca "Como Perro y
+  Gato Mar del Plata" en Google hoy encuentra al de San Martín (ficha, Instagram
+  y tienda online). Una web propia con dominio y su ficha de Google es la forma
+  de que lo encuentren **a ellos** y no al otro. Decirlo sin nombrar ni criticar
+  al otro negocio.
+- Pedido directo por WhatsApp sin precios que mantener (sirve aunque cambien
+  los precios todas las semanas), abierto/cerrado en vivo, "Cómo llegar", y
+  "los cambios del mes los hago yo".
 
 ## Fotos
 
-- Con foto: 0. Todo funciona sin fotos: los huecos dicen "Foto del local pendiente" / "Foto del vivero pendiente".
+- Con foto: 0. Todo funciona sin fotos: el hueco del local dice "Foto del local pendiente".
+- `referencia/frente-foto-mateo.webp`: la foto del frente (18/11/2026). Sirvió para medir los colores. No publicada (muestra el WhatsApp de la vidriera).
 - `referencia/cartel-captura-whatsapp.webp`: la misma foto, más de cerca (de una captura de Mateo, recortada para que no se vean su navegador ni el chat). De ahí sale el logo.
-- `referencia/frente-foto-mateo.webp`: la foto del frente que mandó Mateo (18/11/2026). Sirvió para medir los colores. **No está publicada**: no sabemos de qué local es, y muestra el WhatsApp de la vidriera. Cuando se sepa, puede ir como `foto` de esa sucursal.
-- Cuando lleguen: a `fotos-originales/` → `python3 hacer-fotos.py` → `img/…webp` y `foto:` de la sucursal.
+- Cuando lleguen: a `fotos-originales/` → `python3 hacer-fotos.py` → `img/…webp` y `foto:` del local.
 
 ## Estado técnico
 
 - [ ] Sacar las marcas de demo (ver arriba) al cerrar.
-- [ ] GitHub Pages (`python3 publicar.py`; mientras sea demo el `noindex` ya va en el `index.html`), dominio, Search Console, Perfil de Empresa.
+- [ ] GitHub Pages (`python3 publicar.py`; mientras sea demo el `noindex` ya va en el `index.html`), dominio, Search Console, Perfil de Empresa (ojo con el homónimo: que la ficha quede con la dirección de Bronzini).
 - [ ] QR.
 
 ## Cómo se trabaja acá
 
-1. Los datos están arriba del `<script>` de `index.html`: `SUCURSALES`, `HORARIO`, `ENVIO`, `PAGOS`, `PROMOS`, `CATEGORIAS`, `MARCAS`, `VIVERO_DONDE`.
+1. Los datos están arriba del `<script>` de `index.html`: `LOCAL`, `SUCURSALES`, `HORARIO`, `ENVIO`, `PAGOS`, `PROMOS`, `CATEGORIAS`, `MARCAS`.
 2. Verificar: `node verificar.mjs index.html` (de la skill) a 1366, 390 y 320 px, y un pedido de punta a punta leyendo el mensaje.
-3. Commit + push → `python3 vista-previa.py <carpeta>` → publicar el Artifact en la misma ruta.
+3. Commit + push → `python3 vista-previa.py <carpeta> "Como Perro y Gato"` → publicar el Artifact en la misma ruta.
 
 ## Registro de cambios
 
 Una línea por pedido, la más nueva arriba.
 
-- 18/11/2026 — Mateo mandó el cartel de cerca ("lo que sería el logo") → logo enderezado y limpio en la portada y el pie (`img/logo-cartel.webp`); debajo, solo "y Vivero". Sileoni no se usa en el diseño (es del proveedor). El WhatsApp de la vidriera sigue sin ponerse, como pidió.
-- 18/11/2026 — Armado inicial de la demo de venta con los datos que investigó Mateo (dos direcciones, horario de Instagram, marcas de su tienda online) y la foto del frente (colores, Sileoni, cartel del 10 %). Pedido por WhatsApp con presentación libre, vivero, locales y crédito connectHUB.
+- 18/11/2026 — Mateo: "quitá el vivero y la sucursal de San Martín, no son de este pet shop" → un solo local (Bronzini e Ituzaingó), sin vivero (sección, categoría y botón). Se sacó también todo lo que venía de ese otro negocio: Instagram, Facebook, horario de la bio (queda "Horario a confirmar"), marcas de su tienda (quedan las del frente: Sileoni, Royal Canin, Bonelo). Guiño nuevo "como perro y gato" (huellas que se cruzan) y comedero en lugar de la maceta.
+- 18/11/2026 — Mateo mandó el cartel de cerca ("lo que sería el logo") → logo enderezado y limpio en la portada y el pie (`img/logo-cartel.webp`). Sileoni no se usa en el diseño (es del proveedor). El WhatsApp de la vidriera sigue sin ponerse, como pidió.
+- 18/11/2026 — Armado inicial de la demo de venta con los datos que investigó Mateo y la foto del frente. Pedido por WhatsApp con presentación libre, locales y crédito connectHUB.
