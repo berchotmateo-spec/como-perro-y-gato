@@ -6,8 +6,8 @@ público:** nada de montos del abono, contraseñas ni datos privados del dueño.
 
 ## ⚠️ HAY OTRO PET SHOP CON EL MISMO NOMBRE: no mezclar datos
 
-Este proyecto es el pet shop **Como Perro y Gato de Teodoro Bronzini e
-Ituzaingó** (Villa Primera), el que Mateo vio en persona. **Un solo local y sin
+Este proyecto es el pet shop **Como Perro y Gato de Teodoro Bronzini 614**
+(cerca de Ituzaingó, Villa Primera), el que Mateo vio en persona. **Un solo local y sin
 vivero.**
 
 Hay **otro negocio** que se llama igual en **San Martín 4090** (San Martín y
@@ -45,7 +45,7 @@ Mateo (`WHATSAPP_DEMO`), y los chips punteados "A confirmar".
 | Dato | Valor en la web | Fuente | Estado |
 |---|---|---|---|
 | Nombre | Como Perro y Gato · "Pet Shop" | cartel del frente | ok |
-| Dirección | Teodoro Bronzini e Ituzaingó (Villa Primera) | Mateo, en persona | a confirmar (chip); falta el número |
+| Dirección | Teodoro Bronzini 614 · "Cerca de Ituzaingó" (Villa Primera) | Mateo, 18/11/2026 | ok (sin chip) |
 | Horario | **"Horario a confirmar"** (`HORARIO = null`: no se calcula abierto/cerrado) | — | falta |
 | WhatsApp vidriera | 223 598-2258 | foto del frente | **encontrado, no puesto** (Mateo: "todavía no lo pongas") |
 | WhatsApp en la web | 5492235337853 (el de Mateo) | demo | se cambia al cerrar |
@@ -154,7 +154,6 @@ Mensaje de prueba real (18/11/2026):
 ## PENDIENTES PARA EL DUEÑO
 
 - [ ] **Horario** (días y horas; ¿cortan al mediodía?) → `HORARIO` (hay un ejemplo comentado arriba).
-- [ ] **Dirección exacta** (calle y número) → `SUCURSALES[0].direccion`.
 - [ ] **WhatsApp para pedidos** (¿el 223 598-2258 de la vidriera?) → `whatsapp` cuando Mateo diga.
 - [ ] **¿Hacen envíos?** Zona, costo, mínimo y días → `ENVIO` (o `hay: false`).
 - [ ] **Medios de pago** (los puse yo: efectivo, transferencia, débito) → `PAGOS`.
@@ -196,7 +195,7 @@ Mensaje de prueba real (18/11/2026):
 ## Estado técnico
 
 - [ ] Sacar las marcas de demo (ver arriba) al cerrar.
-- [ ] GitHub Pages (`python3 publicar.py`; mientras sea demo el `noindex` ya va en el `index.html`), dominio, Search Console, Perfil de Empresa (ojo con el homónimo: que la ficha quede con la dirección de Bronzini).
+- [ ] GitHub Pages (`python3 publicar.py`; mientras sea demo el `noindex` ya va en el `index.html`), dominio, Search Console, Perfil de Empresa (ojo con el homónimo: que la ficha quede con Teodoro Bronzini 614).
 - [ ] QR.
 
 ## Cómo se trabaja acá
@@ -209,6 +208,7 @@ Mensaje de prueba real (18/11/2026):
 
 Una línea por pedido, la más nueva arriba.
 
+- 18/11/2026 — Mateo: "Teodoro Bronzini 614 es la altura del local" → dirección, "Cómo llegar" y ficha de Google con el 614; abajo, "Cerca de Ituzaingó". Ya no lleva chip "A confirmar" (el horario sigue a confirmar).
 - 18/11/2026 — Mateo: "quitá el vivero y la sucursal de San Martín, no son de este pet shop" → un solo local (Bronzini e Ituzaingó), sin vivero (sección, categoría y botón). Se sacó también todo lo que venía de ese otro negocio: Instagram, Facebook, horario de la bio (queda "Horario a confirmar"), marcas de su tienda (quedan las del frente: Sileoni, Royal Canin, Bonelo). Guiño nuevo "como perro y gato" (huellas que se cruzan) y comedero en lugar de la maceta.
 - 18/11/2026 — Mateo mandó el cartel de cerca ("lo que sería el logo") → logo enderezado y limpio en la portada y el pie (`img/logo-cartel.webp`). Sileoni no se usa en el diseño (es del proveedor). El WhatsApp de la vidriera sigue sin ponerse, como pidió.
 - 18/11/2026 — Armado inicial de la demo de venta con los datos que investigó Mateo y la foto del frente. Pedido por WhatsApp con presentación libre, locales y crédito connectHUB.
