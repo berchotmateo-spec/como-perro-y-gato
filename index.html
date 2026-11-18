@@ -130,9 +130,10 @@ h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
 .portada .envolver{display:grid;gap:28px;align-items:center;grid-template-columns:1fr;position:relative;z-index:1}
 @media (min-width:880px){.portada .envolver{grid-template-columns:1.15fr .85fr}}
 .ciudad{display:inline-flex;align-items:center;gap:.4em;font-weight:800;font-size:.8rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--hoja)}
-.portada h1{font-size:clamp(3.1rem,12.5vw,6.4rem);color:var(--negro);margin:.18em 0 .1em;line-height:.92}
-.portada h1 .y{font:400 .8em/1 var(--t-mano);color:var(--fucsia);margin:0 .06em}
-.portada h1 .perro,.portada h1 .gato{display:block}
+/* el logo: el cartel del frente, enderezado y limpio (img/logo-cartel.webp). Nunca recortado. */
+.portada h1{margin:.55em 0 .6em}
+.portada h1 img{display:block;width:clamp(180px,46vw,270px);height:auto;border-radius:20px;
+  box-shadow:0 14px 30px rgba(23,21,26,.25)}
 .bajada{display:flex;align-items:center;gap:.5em;flex-wrap:wrap;font:400 clamp(1.25rem,3.6vw,1.7rem)/1.1 var(--t-titulo);color:var(--negro);margin:0 0 .7em}
 .bajada .tag{background:var(--negro);color:var(--amarillo);padding:.18em .55em .22em;border-radius:10px}
 .bajada .tag.vivero{background:var(--lima);color:var(--negro)}
@@ -298,7 +299,10 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
 /* --- pie --- */
 .pie{background:var(--negro);color:#E9E5EC;padding:44px 0 28px}
 .pie .envolver{display:grid;gap:22px}
-.pie .marca b{font-size:1.9rem}
+.pie .marca{flex-direction:row;align-items:center;gap:14px}
+.pie .marca > span{display:flex;flex-direction:column}
+.pie .marca img{width:96px;height:auto;border-radius:12px;border:1px solid #3A3540}
+.pie .marca b{font-size:1.6rem}
 .redes{display:flex;flex-wrap:wrap;gap:10px}
 .redes a{display:inline-flex;align-items:center;gap:.5em;min-height:44px;padding:.45em 1em;border-radius:999px;border:1.5px solid #4A4450;text-decoration:none;font-weight:700}
 .redes a:hover{border-color:var(--lima)}
@@ -367,8 +371,9 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
   <div class="envolver">
     <div>
       <span class="ciudad"><svg class="ic"><use href="#i-pin"/></svg>Mar del Plata</span>
-      <h1 id="titulo"><span class="perro">Como Perro</span> <span class="gato"><span class="y">y</span> Gato</span></h1>
-      <p class="bajada"><span class="tag">Pet Shop</span> <span class="mas">y</span> <span class="tag vivero">Vivero</span></p>
+      <!-- LOGO: recorte de la foto del cartel (provisorio hasta tener el archivo original) -->
+      <h1 id="titulo"><img src="img/logo-cartel.webp" width="598" height="560" alt="Pet Shop Como Perro y Gato"></h1>
+      <p class="bajada"><span class="mas">y</span> <span class="tag vivero">Vivero</span></p>
       <p class="lead">Alimento y accesorios para tu perro y tu gato, y plantas para tu casa. Armá el pedido acá y te confirmamos precio y disponibilidad por WhatsApp.</p>
       <div class="hoy">
         <span class="estado" id="estado-portada">Horario</span>
@@ -560,7 +565,7 @@ input:focus,textarea:focus{border-color:var(--negro);outline:none}
 <!-- ================= PIE ================= -->
 <footer class="pie oscuro">
   <div class="envolver">
-    <a class="marca" href="#inicio"><b>Como Perro <i>y</i> Gato</b><small>Pet Shop y Vivero · Mar del Plata</small></a>
+    <a class="marca" href="#inicio"><img src="img/logo-cartel.webp" width="598" height="560" alt="" loading="lazy"><span><b>Como Perro <i>y</i> Gato</b><small>Pet Shop y Vivero · Mar del Plata</small></span></a>
     <div class="redes" id="redes"></div>
     <p class="demo" id="pie-demo" hidden>Esta es una <b>vista previa</b> de la página, armada para mostrársela al local. Los datos marcados <span class="chip-ac">A confirmar</span> todavía no los confirmó el dueño, y los pedidos de prueba van a un número de prueba, no al local.</p>
     <div class="pie-credito">

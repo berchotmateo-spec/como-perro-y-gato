@@ -48,19 +48,20 @@ Mateo en las dos sucursales (`WHATSAPP_DEMO`), y los chips punteados "A confirma
 | Sucursal 2 | Teodoro Bronzini e Ituzaingó (Villa Primera) | Mateo, en persona | **duda principal** |
 | Horario | Lunes a sábado 9 a 19 h; domingo cerrado (las dos) | bio de Instagram | a confirmar (chip) |
 | Teléfono Google | 0223 565-5986 | Google Maps | **encontrado, no puesto** |
-| WhatsApp vidriera | 223 598-2258 | foto del frente (vidriera) | **encontrado, no puesto** |
+| WhatsApp vidriera | 223 598-2258 | foto del frente (vidriera); Mateo lo volvió a mostrar el 18/11/2026 | **encontrado, no puesto** (Mateo: "todavía no lo pongas") |
 | WhatsApp en la web | 5492235337853 (el de Mateo) en las dos | demo | se cambia al cerrar |
 | Envío a domicilio | Sí; "costo y zona a confirmar" | Google Maps ("Entrega a domicilio"); su tienda tiene zona de envíos | a confirmar |
 | Medios de pago | Efectivo, transferencia, débito | **los puso Claude** | a confirmar |
 | Promo | "Pagando en efectivo, 10 % de reintegro en alimentos" | cartel de la vidriera + "10 % OFF en efectivo" de su tienda | a confirmar (chip) |
 | Marcas de alimento | Royal Canin, Eukanuba, Excellent, Agility, Estampa, Dogui, Bonelo | su tienda online | lista de referencia |
-| Marca extra | Sileoni | carteles del frente (foto) | lista de referencia |
+| Marca extra | Sileoni | carteles del frente (foto) | lista de referencia (solo el nombre, ver Diseño) |
 | Google | 4,7 estrellas, 64 reseñas | Google Maps | **no se usa** (ni reseñas ni frases) |
 | Instagram | @comoperroygato__ (~7.600 seguidores). Destacadas: "Dto Especial", "Vivero", "¡Promos!", perros, gatos, ubicación | Instagram | en el pie + "promos del momento" |
 | Facebook | facebook.com/comoperroygatomdq | Facebook | en el pie |
 | Tienda online | comoperroygato.com | Mateo | **no se enlaza ni se nombra** (ver venta) |
 | Coordenadas | — | — | faltan (no hacen falta: "Cómo llegar" busca la dirección) |
 | Colores | ver Diseño | medidos sobre la foto del frente | provisorios |
+| Logo | `img/logo-cartel.webp`: el cartel "PET SHOP / como Perro y Gato" de la foto, enderezado y limpio | captura que mandó Mateo, 18/11/2026 | provisorio: pedir el archivo original |
 
 ## Productos: qué es real y qué es de referencia
 
@@ -100,8 +101,18 @@ con los mismos datos, así que se va solo).
 - Letras: **Lilita One** (títulos, gordita como el cartel) + **Manrope** (texto)
   + **Caveat Brush** (solo la "y" y las volantas). No repetidas en el registro.
 - Distinto de Zoo Center (violeta/naranja, Baloo 2 + Nunito) y de todas las del registro.
-- El logo **no se redibujó**: logotipo tipográfico provisorio "Como Perro y Gato".
-  La ilustración de la portada (maceta, gato negro con collar, huellas) es propia.
+- **Logo** (18/11/2026, Mateo mostró el cartel como "lo que sería el logo"):
+  `img/logo-cartel.webp` es el cartel de la foto **enderezado y limpio**, no
+  redibujado: se corrigió la perspectiva (`herramientas/enderezar.py`) y se le
+  sacaron el reflejo y la bruma dejando tres colores (`herramientas/limpiar-logo.py`).
+  Va grande en la portada (es el `<h1>`, con su `alt`) y chico en el pie. La
+  cabecera sigue con el nombre en letras (en chico el cartel no se lee). Si llega
+  el original, reemplaza `img/logo-cartel.webp` con el mismo nombre.
+- Debajo del logo dice solo "y Vivero" (el cartel ya dice PET SHOP).
+- **Sileoni no se usa en el diseño**: el cartel blanco, marrón y rojo que sigue
+  al logo es publicidad del proveedor, no la marca del local. Sileoni aparece
+  solo como nombre en la lista de marcas.
+- La ilustración de la portada (maceta, gato negro con collar, huellas) es propia.
 - Cada forma, un solo trabajo (está arriba del CSS): punteado = "A confirmar";
   rayado diagonal = "foto pendiente"; fucsia = lo que suma al pedido; verde
   oscuro = WhatsApp; lima = fondos, nunca texto sobre blanco.
@@ -160,7 +171,7 @@ Local: Villa Primera (Teodoro Bronzini e Ituzaingó)
 - [ ] **Qué venden de verdad** en cada categoría y en el vivero → `CATEGORIAS` (sacar lo que no tienen).
 - [ ] **Marcas** que trabajan (hoy: las de su tienda + Sileoni del cartel) → `MARCAS`.
 - [ ] **Fotos reales**: frente de cada local, adentro, y el vivero → `SUCURSALES[].foto` y la sección vivero. La foto del frente de Mateo está en `referencia/` (falta saber de qué local es).
-- [ ] **Logo original** (archivo), para el logotipo y los colores exactos.
+- [ ] **Logo original** (archivo): hoy es el cartel sacado de una foto → `img/logo-cartel.webp`.
 - [ ] ¿Quieren **precios** en la web? Solo si los pasa el dueño, con fecha.
 
 ## PROVISORIO
@@ -194,6 +205,7 @@ Local: Villa Primera (Teodoro Bronzini e Ituzaingó)
 ## Fotos
 
 - Con foto: 0. Todo funciona sin fotos: los huecos dicen "Foto del local pendiente" / "Foto del vivero pendiente".
+- `referencia/cartel-captura-whatsapp.webp`: la misma foto, más de cerca (de una captura de Mateo, recortada para que no se vean su navegador ni el chat). De ahí sale el logo.
 - `referencia/frente-foto-mateo.webp`: la foto del frente que mandó Mateo (18/11/2026). Sirvió para medir los colores. **No está publicada**: no sabemos de qué local es, y muestra el WhatsApp de la vidriera. Cuando se sepa, puede ir como `foto` de esa sucursal.
 - Cuando lleguen: a `fotos-originales/` → `python3 hacer-fotos.py` → `img/…webp` y `foto:` de la sucursal.
 
@@ -213,4 +225,5 @@ Local: Villa Primera (Teodoro Bronzini e Ituzaingó)
 
 Una línea por pedido, la más nueva arriba.
 
+- 18/11/2026 — Mateo mandó el cartel de cerca ("lo que sería el logo") → logo enderezado y limpio en la portada y el pie (`img/logo-cartel.webp`); debajo, solo "y Vivero". Sileoni no se usa en el diseño (es del proveedor). El WhatsApp de la vidriera sigue sin ponerse, como pidió.
 - 18/11/2026 — Armado inicial de la demo de venta con los datos que investigó Mateo (dos direcciones, horario de Instagram, marcas de su tienda online) y la foto del frente (colores, Sileoni, cartel del 10 %). Pedido por WhatsApp con presentación libre, vivero, locales y crédito connectHUB.
