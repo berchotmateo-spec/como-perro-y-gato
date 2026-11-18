@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Como Perro y Gato — Pet Shop y Vivero en Mar del Plata</title>
+<meta name="description" content="Como Perro y Gato, pet shop y vivero en Mar del Plata: alimento y accesorios para perros y gatos, y plantas. Armá tu pedido y mandalo por WhatsApp.">
+<!-- DEMO: que Google no la muestre hasta que el dueño apruebe. Se saca el día que compra. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#17151A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2317151A'/%3E%3Cg fill='%237EBC06'%3E%3Cpath d='M12 12.6c-2.9 0-5.2 2.6-5.2 4.7 0 1.5 1.2 2.3 2.6 2.3 1 0 1.7-.5 2.6-.5s1.6.5 2.6.5c1.4 0 2.6-.8 2.6-2.3 0-2.1-2.3-4.7-5.2-4.7z'/%3E%3Cellipse cx='6.4' cy='10.6' rx='1.7' ry='2.2'/%3E%3Cellipse cx='9.8' cy='6.8' rx='1.9' ry='2.4'/%3E%3Cellipse cx='14.2' cy='6.8' rx='1.9' ry='2.4'/%3E%3Cellipse cx='17.6' cy='10.6' rx='1.7' ry='2.2'/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:title" content="Como Perro y Gato · Pet Shop y Vivero">
+<meta property="og:description" content="Alimento y accesorios para perros y gatos, y plantas. Mar del Plata.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lilita+One&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* ============================================================
+   COMO PERRO Y GATO · Pet Shop y Vivero
+   Colores medidos sobre la foto del frente que mandó Mateo
+   (provisorios hasta ver el logo original):
+     negro del cartel · verde lima de la pared · fucsia de "PET SHOP"
+     · amarillo de "Como Perro y Gato" (solo sobre negro)
+   y, por el vivero, verde hoja y tierra.
+
+   Cada forma, un solo trabajo:
+     - borde PUNTEADO  → solo el chip "A confirmar" (dato sin confirmar)
+     - rayado en diagonal → solo "foto pendiente"
+     - FUCSIA de fondo  → solo lo que suma al pedido (+, Sumar, Armar pedido)
+     - VERDE OSCURO     → solo WhatsApp
+     - el lima           → fondos y marcas, nunca texto sobre blanco
+   ============================================================ */
+:root{
+  --negro:#17151A;
+  --tinta:#211E24;
+  --gris:#5E5862;
+  --linea:#E4DED2;
+  --fondo:#FAF7F0;
+  --papel:#FFFFFF;
+  --lima:#7EBC06;
+  --lima-suave:#EEF6DC;
+  --hoja:#2F5D14;
+  --fucsia:#C02A6B;
+  --fucsia-osc:#A11F59;
+  --fucsia-suave:#FBE7F0;
+  --amarillo:#F0DC4A;
+  --tierra:#8A4F2A;
+  --tierra-clara:#EBDCC6;
+  --tierra-media:#C9A47F;
+  --wa:#14804A;
+  --wa-osc:#0F6A3C;
+  --error:#B3261E;
+  --radio:22px;
+  --barra:0px;
+  --lado:max(18px, env(safe-area-inset-left));
+  --t-titulo:"Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --t-texto:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --t-mano:"Caveat Brush", "Comic Sans MS", cursive;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:500 16px/1.55 var(--t-texto);
+  padding-bottom:calc(var(--barra) + env(safe-area-inset-bottom));overflow-x:hidden}
+img{max-width:100%;height:auto}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--t-titulo);font-weight:400;line-height:1.05;margin:0;letter-spacing:.2px}
+h2{font-size:clamp(2rem,6vw,3rem);color:var(--negro)}
+.ic{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.lleno{fill:currentColor;stroke:none}
+.envolver{max-width:1180px;margin:0 auto;padding-left:var(--lado);padding-right:max(18px, env(safe-area-inset-right))}
+.solo-lector{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--fucsia);outline-offset:3px;border-radius:8px}
+
+/* --- botones --- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:.7em 1.3em;
+  border-radius:999px;border:2px solid transparent;font-weight:800;font-size:1rem;text-decoration:none;cursor:pointer;
+  transition:transform .15s ease, background-color .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-osc)}
+.btn-pedido{background:var(--fucsia);color:#fff}
+.btn-pedido:hover{background:var(--fucsia-osc)}
+.btn-borde{background:transparent;border-color:var(--negro);color:var(--negro)}
+.btn-borde:hover{background:var(--negro);color:#fff}
+.btn-chico{min-height:44px;padding:.5em 1em;font-size:.92rem}
+
+/* --- chip "A confirmar": el único borde punteado de la página --- */
+.chip-ac{display:inline-flex;align-items:center;gap:.3em;padding:.12em .6em;border:1.5px dashed currentColor;border-radius:999px;
+  font:700 .72rem/1.5 var(--t-texto);letter-spacing:.3px;text-transform:uppercase;color:var(--gris);white-space:nowrap;vertical-align:middle}
+.oscuro .chip-ac{color:#D9D3DC}
+
+/* --- foto pendiente: rayado en diagonal --- */
+.foto-pend{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;text-align:center;
+  border-radius:16px;color:var(--gris);font-weight:700;font-size:.85rem;padding:1em;min-height:150px;
+  background:repeating-linear-gradient(-45deg,#F1ECE2 0 10px,#F8F5EE 10px 20px);border:1px solid var(--linea)}
+.foto-pend .ic{width:28px;height:28px;color:var(--tierra)}
+
+/* --- barra de VISTA PREVIA --- */
+.previa{margin:0;background:var(--amarillo);color:var(--negro);text-align:center;font:800 .78rem/1.35 var(--t-texto);
+  letter-spacing:.4px;padding:7px var(--lado)}
+.previa[hidden]{display:none}
+
+/* --- cabecera --- */
+.cab{position:sticky;top:0;z-index:40;background:var(--negro);color:#fff}
+.cab .envolver{display:flex;align-items:center;gap:12px;min-height:62px}
+.marca{display:flex;flex-direction:column;text-decoration:none;line-height:1;margin-right:auto}
+.marca b{font:400 1.32rem/1 var(--t-titulo);color:var(--amarillo);letter-spacing:.3px}
+.marca b i{font:400 1.25em/1 var(--t-mano);font-style:normal;color:#fff;margin:0 .08em}
+.marca small{font:800 .66rem/1.2 var(--t-texto);letter-spacing:1.6px;text-transform:uppercase;color:var(--lima);margin-top:4px}
+.estado{display:inline-flex;align-items:center;gap:.45em;font-weight:700;font-size:.85rem;white-space:nowrap}
+.estado::before{content:"";width:10px;height:10px;border-radius:50%;background:#9A939E;flex:none}
+.estado.abierto::before{background:var(--lima);box-shadow:0 0 0 4px rgba(126,188,6,.25)}
+.estado.cerrado::before{background:#E0607E}
+.cab .estado{color:#EDE9EF}
+.cab-pedido{display:inline-flex;align-items:center;gap:.4em;min-height:44px;padding:.35em .95em;border-radius:999px;
+  background:var(--fucsia);color:#fff;text-decoration:none;font-weight:800;font-size:.9rem}
+.cab-pedido output{display:inline-grid;place-items:center;min-width:1.5em;height:1.5em;border-radius:999px;background:#fff;color:var(--fucsia-osc);font-size:.8rem}
+.cab-pedido output:empty{display:none}
+@media (max-width:620px){
+  .cab .estado .estado-mas{display:none}
+  .cab-pedido span{display:none}
+}
+@media (max-width:380px){ .marca small{display:none} }
+
+/* --- portada --- */
+.portada{position:relative;overflow:hidden;background:var(--fondo);padding-top:clamp(28px,6vw,64px)}
+.portada .envolver{display:grid;gap:28px;align-items:center;grid-template-columns:1fr;position:relative;z-index:1}
+@media (min-width:880px){.portada .envolver{grid-template-columns:1.15fr .85fr}}
+.ciudad{display:inline-flex;align-items:center;gap:.4em;font-weight:800;font-size:.8rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--hoja)}
+.portada h1{font-size:clamp(3.1rem,12.5vw,6.4rem);color:var(--negro);margin:.18em 0 .1em;line-height:.92}
+.portada h1 .y{font:400 .8em/1 var(--t-mano);color:var(--fucsia);margin:0 .06em}
+.portada h1 .perro,.portada h1 .gato{display:block}
+.bajada{display:flex;align-items:center;gap:.5em;flex-wrap:wrap;font:400 clamp(1.25rem,3.6vw,1.7rem)/1.1 var(--t-titulo);color:var(--negro);margin:0 0 .7em}
+.bajada .tag{background:var(--negro);color:var(--amarillo);padding:.18em .55em .22em;border-radius:10px}
+.bajada .tag.vivero{background:var(--lima);color:var(--negro)}
+.bajada .mas{font-family:var(--t-mano);color:var(--gris)}
+.portada p.lead{font-size:clamp(1.05rem,2.4vw,1.2rem);max-width:34em;margin:0 0 1.1em;color:#3A353D}
+.hoy{display:flex;flex-wrap:wrap;align-items:center;gap:.4em .8em;background:var(--papel);border:1px solid var(--linea);
+  border-radius:16px;padding:.7em 1em;margin:0 0 1.3em;max-width:34em}
+.hoy .estado{font-size:1rem}
+.hoy .horario{color:var(--gris);font-weight:600;font-size:.92rem}
+.acciones{display:flex;flex-wrap:wrap;gap:10px}
+.ilustra{position:relative;max-width:440px;width:100%;justify-self:center}
+.ilustra svg{display:block;width:100%;height:auto}
+@media (max-width:879px){.ilustra{max-width:300px;margin-top:-6px}}
+
+/* --- el guiño: pisadas que brotan, en la tierra al pie de la portada --- */
+.sendero{position:relative;height:96px;margin-top:10px;pointer-events:none}
+.sendero .tierra{position:absolute;inset:auto 0 0 0;width:100%;height:96px;display:block}
+.paso{position:absolute;bottom:var(--y);left:var(--x);width:52px;height:52px;margin-left:-26px}
+.paso .pata{position:absolute;right:0;bottom:0;width:34px;height:34px;color:#6E3B1C;transform:rotate(var(--r))}
+.paso .brote{position:absolute;left:0;bottom:12px;width:16px;height:30px;transform-origin:50% 100%}
+@media (max-width:620px){.paso:nth-child(odd of .paso){display:none}}
+@media (prefers-reduced-motion:no-preference){
+  .paso .pata{animation:pisar .45s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--i) * .3s + .5s)}
+  .paso .brote{animation:brotar .8s cubic-bezier(.2,.8,.3,1.1) both;animation-delay:calc(var(--i) * .3s + 2.2s)}
+}
+@keyframes pisar{from{opacity:0;transform:rotate(var(--r)) scale(.3)}}
+@keyframes brotar{from{opacity:0;transform:scale(.1,0)}}
+
+/* --- secciones --- */
+.seccion{padding:clamp(48px,8vw,88px) 0}
+.cabeza{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:22px}
+.cabeza p{margin:.5em 0 0;max-width:40em;color:#3A353D}
+.volanta{display:block;font:400 1.5rem/1 var(--t-mano);color:var(--fucsia);margin-bottom:.15em}
+
+/* --- promos --- */
+.promos{background:var(--negro);color:#fff;padding:18px 0}
+.promos .envolver{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.promo{display:flex;align-items:center;gap:.7em;flex-wrap:wrap;font-weight:700}
+.promo .ic{color:var(--amarillo);width:26px;height:26px}
+.promo small{color:#CFC8D3;font-weight:600}
+.promos a{color:var(--amarillo);font-weight:800;text-underline-offset:3px}
+
+/* --- categorías --- */
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.filtro{min-height:44px;padding:.4em 1.05em;border-radius:999px;border:2px solid var(--negro);background:transparent;font-weight:800;cursor:pointer}
+.filtro[aria-pressed="true"]{background:var(--negro);color:#fff}
+.cats{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr))}
+.cat{background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:18px 16px 12px;display:flex;flex-direction:column}
+.cat[hidden]{display:none}
+.cat-cab{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.cat-ic{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;flex:none;background:var(--lima-suave);color:var(--hoja)}
+.cat-ic svg{width:36px;height:36px;stroke-width:2.4}
+.cat[data-c="gatos"] .cat-ic{background:var(--fucsia-suave);color:var(--fucsia-osc)}
+.cat[data-c="accesorios"] .cat-ic{background:#F3EFE6;color:var(--negro)}
+.cat[data-c="vivero"] .cat-ic{background:var(--tierra-clara);color:var(--tierra)}
+.cat h3{font-size:1.65rem;color:var(--negro)}
+.cat > p{margin:.2em 0 .6em;color:var(--gris);font-size:.93rem}
+.items{list-style:none;margin:0;padding:0}
+.item{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid #EFEAE0}
+.item-txt{flex:1;min-width:0}
+.item-txt b{display:block;font-weight:800;line-height:1.25}
+.item-txt small{display:block;color:var(--gris);font-size:.82rem;line-height:1.35}
+.precio{font-weight:800;color:var(--negro)}
+
+/* − y + */
+.mm{display:inline-flex;align-items:center;gap:2px;flex:none}
+.mm-b{width:44px;height:44px;border-radius:50%;border:2px solid var(--negro);background:var(--papel);display:grid;place-items:center;cursor:pointer;padding:0}
+.mm-b.mas{background:var(--fucsia);border-color:var(--fucsia);color:#fff}
+.mm-b.mas:hover{background:var(--fucsia-osc)}
+.mm-b:disabled{opacity:.3;cursor:default}
+.mm-b .ic{width:20px;height:20px;stroke-width:2.6}
+.mm output{min-width:1.9em;text-align:center;font-weight:800;font-size:1.05rem}
+.mm.salta output{animation:saltar .3s ease}
+@keyframes saltar{50%{transform:scale(1.45)}}
+@media (prefers-reduced-motion:reduce){.mm.salta output{animation:none}}
+
+/* marcas */
+.marcas{margin-top:26px;background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:20px 16px}
+.marcas h3{font-size:1.5rem}
+.marcas > p{margin:.3em 0 .8em;color:var(--gris);font-size:.93rem}
+.marcas-lista{display:grid;gap:4px 18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));list-style:none;margin:0;padding:0}
+.marcas-lista .item{border-top:1px solid #EFEAE0}
+.nota-ref{display:flex;gap:.6em;align-items:flex-start;margin:18px 0 0;padding:12px 14px;border-radius:14px;background:var(--lima-suave);color:#2B3A1A;font-size:.92rem;font-weight:600}
+.nota-ref .ic{color:var(--hoja);margin-top:2px}
+
+/* --- pedido --- */
+.pedido{background:var(--lima)}
+.pedido h2{color:var(--negro)}
+.pedido .volanta{color:var(--negro)}
+.pedido .cabeza p{color:#1D2A0A}
+.ped-grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:900px){.ped-grid{grid-template-columns:1.05fr .95fr;align-items:start}}
+.panel{background:var(--papel);border-radius:var(--radio);padding:20px 16px;box-shadow:0 10px 30px rgba(30,45,5,.14)}
+.panel h3{font-size:1.45rem;margin-bottom:10px}
+.lineas{list-style:none;margin:0;padding:0}
+.linea{padding:12px 0;border-top:1px solid #EFEAE0}
+.linea:first-child{border-top:0;padding-top:4px}
+.linea-cab{display:flex;align-items:center;gap:10px}
+.linea-cab b{flex:1;font-weight:800;line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.linea input{margin-top:8px}
+.quitar{width:44px;height:44px;border-radius:50%;border:0;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--gris);flex:none}
+.quitar:hover{background:#F3EFE6;color:var(--negro)}
+.vacio{text-align:center;padding:16px 6px 8px;color:var(--gris)}
+.vacio .ic{width:40px;height:40px;color:var(--tierra-media)}
+.vacio p{margin:.4em 0 .9em}
+.agregar-otro{margin-top:12px;width:100%}
+.resumen{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-top:14px;padding-top:12px;border-top:2px solid var(--negro);font-weight:800}
+.resumen small{font-weight:600;color:var(--gris);text-align:right}
+
+.campo{margin:0 0 14px}
+.campo > label,.campo > legend{display:block;font-weight:800;font-size:.93rem;margin:0 0 6px;padding:0}
+.campo .opc{font-weight:600;color:var(--gris)}
+fieldset.campo{border:0;padding:0;min-width:0}
+input[type=text],input[type=tel],textarea{width:100%;min-height:48px;padding:.65em .85em;border-radius:14px;border:2px solid #D9D2C5;background:#fff;font-size:16px}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--negro);outline:none}
+.invalido input,.invalido textarea,input.invalido{border-color:var(--error)}
+.error{display:none;color:var(--error);font-weight:700;font-size:.86rem;margin:6px 0 0}
+.invalido .error,.error.ver{display:block}
+.opciones{display:flex;flex-wrap:wrap;gap:8px}
+.opcion{position:relative}
+.opcion input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opcion span{display:flex;flex-direction:column;justify-content:center;min-height:48px;padding:.45em 1em;border-radius:14px;border:2px solid #D9D2C5;background:#fff;font-weight:700;line-height:1.25}
+.opcion span small{font-weight:600;color:var(--gris);font-size:.8rem}
+.opcion input:checked + span{border-color:var(--negro);background:var(--negro);color:#fff}
+.opcion input:checked + span small{color:#D9D3DC}
+.opcion input:focus-visible + span{outline:3px solid var(--fucsia);outline-offset:2px}
+.invalido .opcion span{border-color:var(--error)}
+.envio-nota{margin:-4px 0 14px;font-size:.88rem;color:var(--gris);font-weight:600;display:flex;gap:.4em;flex-wrap:wrap;align-items:center}
+.solo-envio[hidden]{display:none}
+.enviar{width:100%;min-height:56px;font-size:1.04rem;white-space:nowrap;padding-left:.8em;padding-right:.8em}
+@media (max-width:374px){.enviar{white-space:normal;font-size:1rem}}
+.aviso-envio{margin:10px 0 0;font-size:.84rem;color:var(--gris);text-align:center}
+.aviso-demo{margin:10px 0 0;font-size:.84rem;color:#5B2140;background:var(--fucsia-suave);border-radius:12px;padding:8px 12px;text-align:center;font-weight:700}
+.aviso-demo[hidden]{display:none}
+
+/* --- vivero --- */
+.vivero{background:var(--tierra-clara);position:relative;overflow:hidden}
+.vivero .volanta{color:var(--tierra)}
+.viv-grid{display:grid;gap:22px;grid-template-columns:1fr}
+@media (min-width:880px){.viv-grid{grid-template-columns:1fr 1fr;align-items:center}}
+.vivero p{max-width:34em;color:#3D2A1C}
+.viv-fotos{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.viv-fotos .foto-pend{min-height:170px;background:repeating-linear-gradient(-45deg,#E3D1B8 0 10px,#EFE3D2 10px 20px);border-color:#DCC7AA;color:#6B4A30}
+.viv-fotos .foto-pend:first-child{grid-row:span 2;min-height:352px}
+@media (max-width:520px){.viv-fotos .foto-pend:first-child{min-height:250px}.viv-fotos .foto-pend{min-height:119px}}
+
+/* --- sucursales --- */
+.sucs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
+.suc{background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden;display:flex;flex-direction:column}
+.suc-foto img{display:block;width:100%;height:auto}
+.suc .foto-pend{border-radius:0;border:0;border-bottom:1px solid var(--linea);min-height:160px}
+.suc-cuerpo{padding:18px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.suc h3{font-size:1.7rem;display:flex;flex-wrap:wrap;gap:.3em .5em;align-items:center}
+.suc .dir{font-weight:800;font-size:1.06rem;margin:0}
+.suc .dir small{display:block;font-weight:600;color:var(--gris);font-size:.88rem}
+.suc .nota{margin:0;font-size:.9rem;color:var(--gris)}
+.dias{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;font-size:.95rem}
+.dias dt{font-weight:700}
+.dias dd{margin:0;color:#3A353D}
+.suc-acc{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+
+/* --- pie --- */
+.pie{background:var(--negro);color:#E9E5EC;padding:44px 0 28px}
+.pie .envolver{display:grid;gap:22px}
+.pie .marca b{font-size:1.9rem}
+.redes{display:flex;flex-wrap:wrap;gap:10px}
+.redes a{display:inline-flex;align-items:center;gap:.5em;min-height:44px;padding:.45em 1em;border-radius:999px;border:1.5px solid #4A4450;text-decoration:none;font-weight:700}
+.redes a:hover{border-color:var(--lima)}
+.pie .demo{margin:0;padding:12px 14px;border-radius:14px;background:#2A2630;color:#E9E5EC;font-size:.88rem;max-width:46em}
+.pie .demo[hidden]{display:none}
+.pie-credito{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding-top:18px;border-top:1px solid #3A3540;font-size:.9rem}
+.pie-credito p{margin:0}
+.btn-credito{border-color:#4A4450;color:#E9E5EC}
+.btn-credito:hover{border-color:var(--lima);color:#fff}
+
+/* --- barra fija del pedido (celular) y botón verde --- */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--negro);color:#fff;
+  padding:10px var(--lado) calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;
+  box-shadow:0 -8px 24px rgba(0,0,0,.18)}
+.barra[hidden]{display:none}
+.barra b{flex:1;font-weight:800}
+.barra b small{display:block;font-weight:600;color:#CFC8D3;font-size:.8rem}
+.wa-flota{position:fixed;right:max(16px, env(safe-area-inset-right));bottom:calc(16px + var(--barra) + env(safe-area-inset-bottom));z-index:44;
+  width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);text-decoration:none}
+.wa-flota:hover{background:var(--wa-osc)}
+.wa-flota .ic{width:30px;height:30px}
+</style>
+</head>
+<body>
+
+<!-- ÍCONOS: dibujados acá, sin librerías -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1c0 1.2.9 2.4 1 2.6.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.2z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.6c0-.3.3-.6.6-.6z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-mas" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-bolsa" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+  <symbol id="i-camara" viewBox="0 0 24 24"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13.3" r="3.4"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.2"/></symbol>
+  <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 7z"/><circle cx="7.6" cy="8.2" r="1.4"/></symbol>
+  <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-pata" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><path d="M12 12.6c-2.9 0-5.2 2.6-5.2 4.7 0 1.5 1.2 2.3 2.6 2.3 1 0 1.7-.5 2.6-.5s1.6.5 2.6.5c1.4 0 2.6-.8 2.6-2.3 0-2.1-2.3-4.7-5.2-4.7z"/><ellipse cx="6.2" cy="10.4" rx="1.8" ry="2.3" transform="rotate(-18 6.2 10.4)"/><ellipse cx="9.7" cy="6.6" rx="1.9" ry="2.5"/><ellipse cx="14.3" cy="6.6" rx="1.9" ry="2.5"/><ellipse cx="17.8" cy="10.4" rx="1.8" ry="2.3" transform="rotate(18 17.8 10.4)"/></g></symbol>
+  <!-- categorías -->
+  <symbol id="c-perros" viewBox="0 0 48 48"><path d="M15 14q9-5 18 0 4 8 2 16-3 10-11 10t-11-10q-2-8 2-16z"/><path d="M15 14q-7-2-9 8 0 6 5 7zM33 14q7-2 9 8 0 6-5 7z"/><circle cx="19.5" cy="23" r="1.3" fill="currentColor"/><circle cx="28.5" cy="23" r="1.3" fill="currentColor"/><ellipse cx="24" cy="32" rx="5" ry="3.8"/><path d="M22.3 30.2h3.4l-1.7 1.9z" fill="currentColor"/></symbol>
+  <symbol id="c-gatos" viewBox="0 0 48 48"><path d="M10 21V8l9 7q5-1.6 10 0l9-7v13q3 6 0 12-5 7-14 7t-14-7q-3-6 0-12z"/><circle cx="18" cy="25" r="1.4" fill="currentColor"/><circle cx="30" cy="25" r="1.4" fill="currentColor"/><path d="M22.5 30h3l-1.5 2z" fill="currentColor"/><path d="M5 29h8M5.5 33.5l7.5-2M43 29h-8M42.5 33.5l-7.5-2"/></symbol>
+  <symbol id="c-accesorios" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14"/><path d="M13.5 14.5q9 9.5 0 19M34.5 14.5q-9 9.5 0 19"/></symbol>
+  <symbol id="c-vivero" viewBox="0 0 48 48"><path d="M15 28h18l-2.5 12h-13z"/><path d="M13 28h22M24 28V16"/><path d="M24 21q-10-1-11-11 9 0 11 9"/><path d="M24 18q5-9 13-9-1 9-13 12"/></symbol>
+</svg>
+
+<p class="previa" id="previa" hidden></p>
+
+<header class="cab">
+  <div class="envolver">
+    <a class="marca" href="#inicio" aria-label="Como Perro y Gato, ir al inicio">
+      <b>Como Perro <i>y</i> Gato</b>
+      <small>Pet Shop y Vivero</small>
+    </a>
+    <span class="estado" id="estado-cab" aria-live="polite">Horario</span>
+    <a class="cab-pedido" href="#pedido"><svg class="ic"><use href="#i-bolsa"/></svg><span>Tu pedido</span><output id="cuenta-cab"></output></a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ================= PORTADA ================= -->
+<section class="portada" aria-labelledby="titulo">
+  <div class="envolver">
+    <div>
+      <span class="ciudad"><svg class="ic"><use href="#i-pin"/></svg>Mar del Plata</span>
+      <h1 id="titulo"><span class="perro">Como Perro</span> <span class="gato"><span class="y">y</span> Gato</span></h1>
+      <p class="bajada"><span class="tag">Pet Shop</span> <span class="mas">y</span> <span class="tag vivero">Vivero</span></p>
+      <p class="lead">Alimento y accesorios para tu perro y tu gato, y plantas para tu casa. Armá el pedido acá y te confirmamos precio y disponibilidad por WhatsApp.</p>
+      <div class="hoy">
+        <span class="estado" id="estado-portada">Horario</span>
+        <span class="horario" id="horario-portada"></span>
+        <span class="chip-ac" id="chip-horario" hidden>A confirmar</span>
+      </div>
+      <div class="acciones">
+        <a class="btn btn-wa" id="wa-portada" href="#" target="_blank" rel="noopener"><svg class="ic lleno"><use href="#i-wa"/></svg>Escribinos por WhatsApp</a>
+        <a class="btn btn-pedido" href="#productos"><svg class="ic"><use href="#i-bolsa"/></svg>Armar mi pedido</a>
+      </div>
+    </div>
+
+    <!-- Ilustración propia (no es el logo del local): maceta, gato y huellas -->
+    <div class="ilustra" aria-hidden="true">
+      <svg viewBox="0 0 400 380">
+        <circle cx="200" cy="190" r="168" fill="#7EBC06"/>
+        <!-- planta -->
+        <g fill="#2F5D14">
+          <path d="M150 238c-8-40-42-62-86-58 6 40 40 64 86 58z"/>
+          <path d="M152 236c-28-44-20-96 14-128 26 40 18 92-14 128z"/>
+          <path d="M156 238c10-46 46-70 92-66-8 42-46 68-92 66z"/>
+        </g>
+        <g fill="none" stroke="#7EBC06" stroke-width="3" stroke-linecap="round" opacity=".8">
+          <path d="M150 236c-22-18-44-32-74-50"/>
+          <path d="M153 232c0-36 6-74 13-118"/>
+          <path d="M158 234c26-18 52-34 80-56"/>
+        </g>
+        <!-- maceta -->
+        <path d="M104 236h104l-14 92h-76z" fill="#8A4F2A"/>
+        <rect x="96" y="226" width="120" height="24" rx="8" fill="#A9653A"/>
+        <path d="M118 270c20 6 56 6 78 0" stroke="#A9653A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- gato sentado -->
+        <path d="M300 336c34 0 46-38 36-74-6-26-17-44-22-58 10-8 13-24 9-38l6-32-22 16c-8-3-18-3-26 0l-18-16 4 32c-6 16 0 32 14 40-10 28-22 78-18 118 2 12 14 12 37 12z" fill="#17151A"/>
+        <path d="M334 322c34-4 46-38 26-58" fill="none" stroke="#17151A" stroke-width="14" stroke-linecap="round"/>
+        <ellipse cx="283" cy="186" rx="4.5" ry="6.5" fill="#F0DC4A"/>
+        <ellipse cx="305" cy="186" rx="4.5" ry="6.5" fill="#F0DC4A"/>
+        <path d="M290 199h8l-4 5z" fill="#E0607E"/>
+        <!-- collar -->
+        <path d="M276 218c12 7 30 7 40 0" fill="none" stroke="#C02A6B" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="296" cy="230" r="6" fill="#F0DC4A"/>
+        <!-- huellas de perro -->
+        <g fill="#17151A" opacity=".85">
+          <use href="#i-pata" x="228" y="300" width="30" height="30" transform="rotate(-12 243 315)"/>
+          <use href="#i-pata" x="60" y="300" width="26" height="26" transform="rotate(10 73 313)" opacity=".7"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- El guiño: huellas que pisan la tierra y de cada una brota una plantita (una sola vez, al cargar) -->
+  <div class="sendero" aria-hidden="true" id="sendero">
+    <svg class="tierra" viewBox="0 0 1200 96" preserveAspectRatio="none"><path d="M0 34C120 14 240 40 360 30s250-26 380-8 260 22 460 2V96H0z" fill="#EBDCC6"/><path d="M0 52C160 36 300 58 470 48s300-22 460-6 190 14 270 4V96H0z" fill="#DCC6A6"/></svg>
+  </div>
+</section>
+
+<!-- ================= PROMOS ================= -->
+<section class="promos" id="promos" aria-label="Promos" hidden>
+  <div class="envolver" id="promos-lista"></div>
+</section>
+
+<!-- ================= CATEGORÍAS ================= -->
+<section class="seccion" id="productos" aria-labelledby="t-productos">
+  <div class="envolver">
+    <div class="cabeza">
+      <div>
+        <span class="volanta">Elegí y sumá</span>
+        <h2 id="t-productos">Qué buscás</h2>
+        <p>Tocá <b>+</b> en lo que necesitás. Después, en tu pedido, anotás marca, kilos o presentación, y te confirmamos precio y disponibilidad.</p>
+      </div>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar categorías" id="filtros"></div>
+    <div class="cats" id="cats"></div>
+
+    <div class="marcas" id="marcas">
+      <h3>Marcas de alimento</h3>
+      <p>Sumá la marca y en el pedido escribís para quién es (perro o gato, edad, tamaño) y cuántos kilos.</p>
+      <ul class="marcas-lista" id="marcas-lista"></ul>
+    </div>
+
+    <p class="nota-ref"><svg class="ic"><use href="#i-info"/></svg><span><b>Lista de referencia.</b> No es todo lo que hay: si buscás otra cosa, escribila en tu pedido y te decimos si la tenemos.</span></p>
+  </div>
+</section>
+
+<!-- ================= PEDIDO ================= -->
+<section class="seccion pedido" id="pedido" aria-labelledby="t-pedido">
+  <div class="envolver">
+    <div class="cabeza">
+      <div>
+        <span class="volanta">Por WhatsApp</span>
+        <h2 id="t-pedido">Tu pedido</h2>
+        <p>Lo mandás armado por WhatsApp y te respondemos con el precio y si está.</p>
+      </div>
+    </div>
+    <div class="ped-grid">
+      <div class="panel">
+        <h3>Lo que llevás</h3>
+        <ul class="lineas" id="lineas"></ul>
+        <div class="vacio" id="vacio">
+          <svg class="ic"><use href="#i-bolsa"/></svg>
+          <p>Todavía no sumaste nada.<br>Elegí de la lista o escribí lo que buscás.</p>
+          <a class="btn btn-borde btn-chico" href="#productos">Ver la lista</a>
+        </div>
+        <button type="button" class="btn btn-borde btn-chico agregar-otro" id="agregar-otro"><svg class="ic"><use href="#i-mas"/></svg>Escribir otro producto</button>
+        <p class="error" id="error-items">Sumá al menos un producto.</p>
+        <div class="resumen"><span id="resumen-cant">0 productos</span><small>Precio a confirmar<br>por WhatsApp</small></div>
+      </div>
+
+      <form class="panel" id="form" novalidate>
+        <h3>Tus datos</h3>
+        <fieldset class="campo" id="campo-suc">
+          <legend>¿A qué local?</legend>
+          <div class="opciones" id="opc-suc"></div>
+          <p class="error">Elegí el local.</p>
+        </fieldset>
+        <fieldset class="campo" id="campo-entrega">
+          <legend>¿Cómo lo querés?</legend>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="entrega" value="retiro" checked><span>Lo retiro en el local</span></label>
+            <label class="opcion"><input type="radio" name="entrega" value="envio"><span>Envío a domicilio</span></label>
+          </div>
+        </fieldset>
+        <p class="envio-nota solo-envio" id="envio-nota" hidden></p>
+        <div class="campo solo-envio" id="campo-dir" hidden>
+          <label for="f-dir">Dirección</label>
+          <input type="text" id="f-dir" autocomplete="street-address" placeholder="Calle y número">
+          <p class="error">Escribí la dirección para el envío.</p>
+        </div>
+        <div class="campo solo-envio" id="campo-entre" hidden>
+          <label for="f-entre">Entre calles <span class="opc">(opcional)</span></label>
+          <input type="text" id="f-entre" placeholder="Ej.: entre Olazábal y Garay">
+        </div>
+        <div class="campo" id="campo-nombre">
+          <label for="f-nombre">Tu nombre</label>
+          <input type="text" id="f-nombre" autocomplete="given-name">
+          <p class="error">Escribí tu nombre.</p>
+        </div>
+        <fieldset class="campo" id="campo-pago">
+          <legend>¿Cómo pagás? <span class="opc">(opcional)</span></legend>
+          <div class="opciones" id="opc-pago"></div>
+        </fieldset>
+        <div class="campo">
+          <label for="f-com">Comentario <span class="opc">(opcional)</span></label>
+          <textarea id="f-com" placeholder="Ej.: es para un cachorro de 4 meses"></textarea>
+        </div>
+        <a class="btn btn-wa enviar" id="enviar" href="#" target="_blank" rel="noopener"><svg class="ic lleno"><use href="#i-wa"/></svg>Mandar pedido por WhatsApp</a>
+        <p class="aviso-envio">Se abre WhatsApp con el pedido escrito. Lo revisás y tocás enviar.</p>
+        <p class="aviso-demo" id="aviso-demo" hidden>Vista previa: los pedidos de prueba van a un número de prueba, no al local.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIVERO ================= -->
+<section class="seccion vivero" id="vivero" aria-labelledby="t-vivero">
+  <div class="envolver viv-grid">
+    <div>
+      <span class="volanta">Además</span>
+      <h2 id="t-vivero">El vivero</h2>
+      <p>En Como Perro y Gato también hay plantas. Contanos cuál buscás, o para qué lugar de tu casa, y te decimos qué tenemos.</p>
+      <p id="vivero-donde"></p>
+      <div class="acciones">
+        <button type="button" class="btn btn-pedido" id="sumar-planta"><svg class="ic"><use href="#i-mas"/></svg>Sumar una planta al pedido</button>
+        <a class="btn btn-borde" id="wa-vivero" href="#" target="_blank" rel="noopener">Preguntar por una planta</a>
+      </div>
+    </div>
+    <div class="viv-fotos" aria-label="Fotos del vivero (pendientes)">
+      <div class="foto-pend"><svg class="ic"><use href="#i-camara"/></svg>Foto del vivero pendiente</div>
+      <div class="foto-pend"><svg class="ic"><use href="#i-camara"/></svg>Foto pendiente</div>
+      <div class="foto-pend"><svg class="ic"><use href="#i-camara"/></svg>Foto pendiente</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCALES ================= -->
+<section class="seccion" id="locales" aria-labelledby="t-locales">
+  <div class="envolver">
+    <div class="cabeza">
+      <div>
+        <span class="volanta">Dónde estamos</span>
+        <h2 id="t-locales">Ubicación y horario</h2>
+      </div>
+    </div>
+    <div class="sucs" id="sucs"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= PIE ================= -->
+<footer class="pie oscuro">
+  <div class="envolver">
+    <a class="marca" href="#inicio"><b>Como Perro <i>y</i> Gato</b><small>Pet Shop y Vivero · Mar del Plata</small></a>
+    <div class="redes" id="redes"></div>
+    <p class="demo" id="pie-demo" hidden>Esta es una <b>vista previa</b> de la página, armada para mostrársela al local. Los datos marcados <span class="chip-ac">A confirmar</span> todavía no los confirmó el dueño, y los pedidos de prueba van a un número de prueba, no al local.</p>
+    <div class="pie-credito">
+      <p>Diseñado por <b>connectHUB</b></p>
+      <a class="btn btn-borde btn-chico btn-credito" href="https://www.instagram.com/connect.hub.consultora/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg>@connect.hub.consultora</a>
+    </div>
+  </div>
+</footer>
+
+<div class="barra" id="barra" hidden>
+  <b><span id="barra-cant">1 producto</span><small>Precio y disponibilidad por WhatsApp</small></b>
+  <a class="btn btn-pedido btn-chico" href="#pedido">Ver pedido<svg class="ic"><use href="#i-flecha"/></svg></a>
+</div>
+<a class="wa-flota" id="wa-flota" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg class="ic lleno"><use href="#i-wa"/></svg></a>
+
+<script>
+/* ==========================================================================
+   DATOS DEL LOCAL — todo lo que cambia está acá arriba.
+   Un campo vacío ("" o null) no dibuja nada.
+   ========================================================================== */
+
+// --- Marcas de la DEMO (se sacan el día que el dueño compra) ---
+const VISTA_PREVIA = "VISTA PREVIA · propuesta de página · datos a confirmar con el local";   // "" = sin barra
+const DEMO = true;                    // aviso en el pie y debajo del botón de pedido
+const MOSTRAR_PRECIOS = false;        // no hay precios confirmados: todo "a confirmar por WhatsApp"
+
+// WhatsApp de PRUEBA (el de Mateo). Los pedidos de la demo NO le llegan al local.
+// Encontrados, NO puestos todavía: 0223 565-5986 (Google Maps) y 223 598-2258 (vidriera, foto del frente).
+const WHATSAPP_DEMO = "5492235337853";
+
+const LOCAL = {
+  nombre: "Como Perro y Gato",
+  bajada: "Pet Shop y Vivero",
+  ciudad: "Mar del Plata",
+  instagram: "https://www.instagram.com/comoperroygato__/",
+  facebook: "https://www.facebook.com/comoperroygatomdq",
+};
+
+// --- Horario. Formato "09:00-19:00"; "cerrado"; varios tramos: "09:00-13:00, 16:00-20:00".
+//     Si el cierre es menor que la apertura, pasa la medianoche.
+//     Fuente: bio de Instagram (lunes a sábado de 9 a 19). confirmado:false muestra el chip "A confirmar".
+//     null = "Horario a confirmar" y no se calcula abierto/cerrado.
+const HORARIO = {
+  lun: "09:00-19:00", mar: "09:00-19:00", mie: "09:00-19:00", jue: "09:00-19:00",
+  vie: "09:00-19:00", sab: "09:00-19:00", dom: "cerrado",
+  confirmado: false,
+};
+
+// --- Sucursales. Funciona con 1 o con 2: mostrar:false esconde una (y desaparece el "¿a qué local?").
+//     whatsapp: hoy el de prueba en las dos. horario: null = usa HORARIO.
+//     confirmada:false = chip "A confirmar". foto: "img/frente-xxx.webp" cuando haya.
+const SUCURSALES = [
+  { id: "san-martin", nombre: "San Martín", direccion: "San Martín 4090", referencia: "Esquina Olazábal",
+    whatsapp: WHATSAPP_DEMO, horario: null, confirmada: false, foto: "",
+    nota: "",
+    maps: "https://www.google.com/maps/search/?api=1&query=San+Mart%C3%ADn+4090%2C+Mar+del+Plata",
+    mostrar: true },
+  { id: "bronzini", nombre: "Villa Primera", direccion: "Teodoro Bronzini e Ituzaingó", referencia: "Villa Primera",
+    whatsapp: WHATSAPP_DEMO, horario: null, confirmada: false, foto: "",
+    nota: "",
+    maps: "https://www.google.com/maps/search/?api=1&query=Teodoro+Bronzini+y+Ituzaing%C3%B3%2C+Mar+del+Plata",
+    mostrar: true },
+];
+
+// --- Vivero: en qué local está. "" = no se dice. Ej.: "El vivero está en el local de San Martín."
+const VIVERO_DONDE = "";
+
+// --- Envío a domicilio (Google Maps dice "Entrega a domicilio"). Costo y zona: a confirmar.
+const ENVIO = { hay: true, texto: "Costo y zona de envío a confirmar por WhatsApp.", confirmado: false };
+
+// --- Medios de pago: los puso Claude (efectivo, transferencia, débito). A confirmar con el dueño.
+const PAGOS = ["Efectivo", "Transferencia", "Tarjeta de débito"];
+
+// --- Promos. confirmada:false = chip "A confirmar". [] = la franja desaparece.
+//     "10 % en efectivo": cartel de la vidriera ("Pago efectivo 10 % reintegro en alimentos") y su tienda online.
+const PROMOS = [
+  { titulo: "Pagando en efectivo, 10 % de reintegro en alimentos", detalle: "", confirmada: false },
+];
+const PROMOS_INSTAGRAM = true;   // agrega "Mirá las promos del momento en Instagram"
+
+// --- Categorías y productos (LISTA DE REFERENCIA, sin precios).
+//     k: clave única (no cambiarla: es lo que se guarda en el pedido) · n: nombre · d: detalle chico
+//     ej: ejemplo que aparece en el pedido para la presentación · p: precio (solo si MOSTRAR_PRECIOS)
+//     visto:true = visto en la vidriera o en su tienda online (el resto son clásicos del rubro). Ver CLAUDE.md.
+const CATEGORIAS = [
+  { id: "perros", nombre: "Perros", texto: "Para tu perro, cachorro o adulto.", items: [
+    { k: "perro-alimento", n: "Alimento balanceado para perro", d: "Cachorro, adulto o senior", ej: "Ej.: adulto raza mediana, bolsa de 15 kg", visto: true },
+    { k: "perro-snacks", n: "Snacks y premios", d: "Huesitos, galletitas, dentales", ej: "Ej.: dentales para perro chico", visto: true },
+    { k: "perro-correas", n: "Correas, collares y pecheras", d: "", ej: "Ej.: pechera talle M" },
+    { k: "perro-juguetes", n: "Juguetes", d: "Pelotas, mordillos, peluches", ej: "Ej.: pelota para perro grande" },
+  ]},
+  { id: "gatos", nombre: "Gatos", texto: "Para tu gato, de chico a grande.", items: [
+    { k: "gato-alimento", n: "Alimento balanceado para gato", d: "Gatito, adulto, castrado, urinary", ej: "Ej.: gato adulto castrado, 3 kg", visto: true },
+    { k: "gato-piedras", n: "Piedras sanitarias", d: "", ej: "Ej.: bolsa de 4 kg" },
+    { k: "gato-sanitarios", n: "Bandejas y sanitarios", d: "Abiertos o con tapa", ej: "Ej.: sanitario con tapa", visto: true },
+    { k: "gato-casitas", n: "Casitas y rascadores", d: "", ej: "Ej.: rascador chico", visto: true },
+  ]},
+  { id: "accesorios", nombre: "Accesorios", texto: "Para perros y gatos.", items: [
+    { k: "acc-comederos", n: "Comederos y bebederos", d: "", ej: "Ej.: comedero doble de acero" },
+    { k: "acc-camas", n: "Camas y cuchas", d: "", ej: "Ej.: cama para perro mediano" },
+    { k: "acc-transportadoras", n: "Transportadoras", d: "", ej: "Ej.: para gato" },
+    { k: "acc-higiene", n: "Higiene", d: "Shampoo, cepillos, bolsitas", ej: "Ej.: cepillo para pelo largo" },
+  ]},
+  { id: "vivero", nombre: "Vivero", texto: "Plantas y todo para cuidarlas.", items: [
+    { k: "viv-interior", n: "Plantas de interior", d: "", ej: "Ej.: una para poca luz" },
+    { k: "viv-exterior", n: "Plantas de exterior", d: "", ej: "Ej.: para balcón al sol" },
+    { k: "viv-macetas", n: "Macetas", d: "", ej: "Ej.: de barro, 20 cm" },
+    { k: "viv-tierra", n: "Tierra y sustratos", d: "", ej: "Ej.: bolsa de 10 litros" },
+  ]},
+];
+
+// --- Marcas de alimento (sin precios). Fuente: su tienda online; Sileoni, del cartel del frente.
+const MARCAS = ["Royal Canin", "Eukanuba", "Excellent", "Agility", "Estampa", "Dogui", "Bonelo", "Sileoni"];
+
+/* ==========================================================================
+   De acá para abajo, el funcionamiento. Para cambiar datos no hace falta tocarlo.
+   ========================================================================== */
+(function () {
+"use strict";
+
+function paso(nombre, fn) {
+  try { return fn(); } catch (e) { if (window.console) console.error("Falló «" + nombre + "»:", e); }
+}
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pesos = (n) => "$ " + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const linkWA = (numero, texto) => "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+const quieto = () => window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+const CHIP = '<span class="chip-ac">A confirmar</span>';
+const ic = (id, extra) => '<svg class="ic' + (extra ? " " + extra : "") + '" aria-hidden="true"><use href="#' + id + '"/></svg>';
+
+const VISIBLES = SUCURSALES.filter((s) => s.mostrar !== false);
+const WA_GENERAL = (VISIBLES[0] && VISIBLES[0].whatsapp) || WHATSAPP_DEMO;
+const SALUDO = "Hola! Quería hacer una consulta.";
+
+/* ---------- la hora de Mar del Plata (no la del celular del visitante) ---------- */
+const ZONA = "America/Argentina/Buenos_Aires";
+const DIAS = ["dom", "lun", "mar", "mie", "jue", "vie", "sab"];
+const NOMBRE_DIA = { dom: "domingo", lun: "lunes", mar: "martes", mie: "miércoles", jue: "jueves", vie: "viernes", sab: "sábado" };
+function ahoraMdp() {
+  try {
+    const p = new Intl.DateTimeFormat("en-US", { timeZone: ZONA, weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    const v = (t) => (p.find((x) => x.type === t) || {}).value;
+    const dia = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(v("weekday"));
+    if (dia >= 0) return { dia, h: (Number(v("hour")) % 24) + Number(v("minute")) / 60 };
+  } catch (e) { /* sigue con la cuenta a mano */ }
+  const d = new Date(Date.now() - 3 * 3600 * 1000);   // la Argentina está en UTC-3 todo el año
+  return { dia: d.getUTCDay(), h: d.getUTCHours() + d.getUTCMinutes() / 60 };
+}
+const num = (hhmm) => { const [h, m] = hhmm.trim().split(":").map(Number); return h + (m || 0) / 60; };
+function tramos(txt) {
+  if (!txt || /cerrad/i.test(txt)) return [];
+  return txt.split(",").map((t) => { const [a, b] = t.split("-"); let x = num(a), y = num(b); if (y <= x) y += 24; return [x, y]; });
+}
+const hora = (h) => { h = h % 24; const m = Math.round((h % 1) * 60); return Math.floor(h) + (m ? ":" + String(m).padStart(2, "0") : ""); };
+function estadoDe(hor) {
+  if (!hor) return { clase: "", texto: "Horario a confirmar", corto: "Horario a confirmar" };
+  const { dia, h } = ahoraMdp();
+  for (const [a, b] of tramos(hor[DIAS[dia]])) if (h >= a && h < b) return { clase: "abierto", texto: "Abierto ahora · cierra a las " + hora(b), corto: "Abierto ahora" };
+  for (const [, b] of tramos(hor[DIAS[(dia + 6) % 7]])) if (b > 24 && h < b - 24) return { clase: "abierto", texto: "Abierto ahora · cierra a las " + hora(b), corto: "Abierto ahora" };
+  for (let i = 0; i < 7; i++) {
+    const d = (dia + i) % 7;
+    for (const [a] of tramos(hor[DIAS[d]])) {
+      if (i === 0 && a <= h) continue;
+      const cuando = i === 0 ? "hoy" : i === 1 ? "mañana" : "el " + NOMBRE_DIA[DIAS[d]];
+      return { clase: "cerrado", texto: "Cerrado · abre " + cuando + " a las " + hora(a), corto: "Cerrado" };
+    }
+  }
+  return { clase: "cerrado", texto: "Cerrado", corto: "Cerrado" };
+}
+// "Lunes a sábado: 9 a 19 h" agrupando los días iguales
+function diasAgrupados(hor) {
+  const orden = ["lun", "mar", "mie", "jue", "vie", "sab", "dom"];
+  const txt = (d) => { const t = tramos(hor[d]); return t.length ? t.map(([a, b]) => hora(a) + " a " + hora(b)).join(" y ") + " h" : "Cerrado"; };
+  const grupos = [];
+  orden.forEach((d) => { const t = txt(d); const g = grupos[grupos.length - 1]; if (g && g.t === t) g.hasta = d; else grupos.push({ desde: d, hasta: d, t }); });
+  const may = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+  return grupos.map((g) => ({ dias: may(NOMBRE_DIA[g.desde]) + (g.hasta !== g.desde ? (orden.indexOf(g.hasta) - orden.indexOf(g.desde) === 1 ? " y " : " a ") + NOMBRE_DIA[g.hasta] : ""), t: g.t }));
+}
+const horarioDe = (s) => s.horario || HORARIO;
+
+/* ---------- productos: un índice clave → producto ---------- */
+const PROD = {};
+CATEGORIAS.forEach((c) => c.items.forEach((it) => { PROD[it.k] = { n: it.n, ej: it.ej || "", cat: c.nombre, p: it.p }; }));
+const slug = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-");
+MARCAS.forEach((m) => { PROD["marca-" + slug(m)] = { n: "Alimento " + m, ej: "Ej.: perro adulto, 15 kg · gato castrado, 7,5 kg", cat: "Marcas" }; });
+
+/* ---------- el pedido, guardado en el celular ---------- */
+const CLAVE = "cpyg-pedido-v1";
+const pedido = { items: {}, det: {}, libres: [], form: {} };
+let sigLibre = 1;
+function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(pedido)); } catch (e) { /* sin memoria */ } }
+function recuperar() {
+  let g = null;
+  try { g = JSON.parse(localStorage.getItem(CLAVE) || "null"); } catch (e) { g = null; }
+  if (!g || typeof g !== "object") return;
+  Object.keys(g.items || {}).forEach((k) => { const n = Math.floor(Number(g.items[k])); if (PROD[k] && n > 0) pedido.items[k] = Math.min(99, n); });
+  Object.keys(g.det || {}).forEach((k) => { if (pedido.items[k]) pedido.det[k] = String(g.det[k]).slice(0, 200); });
+  (Array.isArray(g.libres) ? g.libres : []).forEach((l) => {
+    if (l && typeof l === "object") pedido.libres.push({ id: sigLibre++, n: String(l.n || "").slice(0, 120), det: String(l.det || "").slice(0, 200), c: Math.max(1, Math.min(99, Math.floor(Number(l.c)) || 1)) });
+  });
+  if (g.form && typeof g.form === "object") pedido.form = g.form;
+}
+const cantidadTotal = () => Object.values(pedido.items).reduce((a, b) => a + b, 0) + pedido.libres.reduce((a, l) => a + l.c, 0);
+const lineasTotal = () => Object.keys(pedido.items).length + pedido.libres.length;
+
+/* ---------- dibujar ---------- */
+function mm(k, nombre) {
+  const c = pedido.items[k] || 0;
+  return '<div class="mm" data-k="' + esc(k) + '">' +
+    '<button type="button" class="mm-b" data-d="-1" aria-label="Sacar uno: ' + esc(nombre) + '"' + (c ? "" : " disabled") + ">" + ic("i-menos") + "</button>" +
+    '<output aria-live="polite">' + c + "</output>" +
+    '<button type="button" class="mm-b mas" data-d="1" aria-label="Sumar uno: ' + esc(nombre) + '">' + ic("i-mas") + "</button></div>";
+}
+function itemHTML(k, nombre, detalle, p) {
+  const precio = MOSTRAR_PRECIOS && p ? '<span class="precio">' + pesos(p) + "</span>" : "";
+  return '<li class="item"><div class="item-txt"><b>' + esc(nombre) + "</b>" + (detalle ? "<small>" + esc(detalle) + "</small>" : "") + precio + "</div>" + mm(k, nombre) + "</li>";
+}
+
+function pintarCatalogo() {
+  $("#cats").innerHTML = CATEGORIAS.map((c) =>
+    '<article class="cat" data-c="' + esc(c.id) + '" aria-labelledby="cat-' + esc(c.id) + '">' +
+      '<div class="cat-cab"><span class="cat-ic"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><use href="#c-' + esc(c.id) + '"/></svg></span>' +
+      '<h3 id="cat-' + esc(c.id) + '">' + esc(c.nombre) + "</h3></div>" +
+      (c.texto ? "<p>" + esc(c.texto) + "</p>" : "") +
+      '<ul class="items">' + c.items.map((it) => itemHTML(it.k, it.n, it.d, it.p)).join("") + "</ul></article>"
+  ).join("");
+  $("#filtros").innerHTML = ['<button type="button" class="filtro" data-f="" aria-pressed="true">Todo</button>']
+    .concat(CATEGORIAS.map((c) => '<button type="button" class="filtro" data-f="' + esc(c.id) + '" aria-pressed="false">' + esc(c.nombre) + "</button>")).join("");
+  $("#filtros").addEventListener("click", (e) => {
+    const b = e.target.closest(".filtro"); if (!b) return;
+    $$(".filtro").forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+    const f = b.dataset.f;
+    $$(".cat").forEach((c) => { c.hidden = !!f && c.dataset.c !== f; });
+    $("#marcas").hidden = !!f && f === "vivero" || (!!f && f === "accesorios");
+  });
+  if (MARCAS.length) $("#marcas-lista").innerHTML = MARCAS.map((m) => itemHTML("marca-" + slug(m), m, "", null)).join("");
+  else $("#marcas").hidden = true;
+}
+
+function pintarCuentas() {
+  $$(".mm[data-k]").forEach((box) => {
+    const k = box.dataset.k, c = pedido.items[k] || 0;
+    const out = $("output", box); if (out.textContent !== String(c)) out.textContent = c;
+    $(".mm-b[data-d='-1']", box).disabled = !c;
+  });
+  const n = cantidadTotal(), l = lineasTotal();
+  $("#cuenta-cab").textContent = n ? n : "";
+  $("#barra-cant").textContent = n + (n === 1 ? " producto" : " productos");
+  $("#resumen-cant").textContent = n + (n === 1 ? " producto" : " productos");
+  $("#vacio").hidden = l > 0;
+  const hay = l > 0;
+  $("#barra").hidden = !hay || !enCelular();
+  document.documentElement.style.setProperty("--barra", !$("#barra").hidden ? "72px" : "0px");
+  if (hay) $("#error-items").classList.remove("ver");
+}
+const enCelular = () => window.matchMedia && matchMedia("(max-width: 899px)").matches;
+
+function pintarLineas() {
+  const L = [];
+  Object.keys(pedido.items).forEach((k) => {
+    const p = PROD[k];
+    L.push('<li class="linea" data-linea="' + esc(k) + '"><div class="linea-cab"><b>' + esc(p.n) + "</b>" + mm(k, p.n) + "</div>" +
+      '<label class="solo-lector" for="det-' + esc(k) + '">Marca, kilos o presentación de ' + esc(p.n) + "</label>" +
+      '<input type="text" id="det-' + esc(k) + '" data-det="' + esc(k) + '" maxlength="200" placeholder="' + esc(p.ej || "Marca, kilos o presentación") + '" value="' + esc(pedido.det[k] || "") + '"></li>');
+  });
+  pedido.libres.forEach((l) => {
+    L.push('<li class="linea" data-libre="' + l.id + '"><div class="linea-cab">' +
+      '<label class="solo-lector" for="lib-n-' + l.id + '">Producto</label>' +
+      '<input type="text" id="lib-n-' + l.id + '" data-lib-n="' + l.id + '" maxlength="120" placeholder="¿Qué buscás? Ej.: pipeta para perro de 10 kg" value="' + esc(l.n) + '" style="margin-top:0">' +
+      '<button type="button" class="quitar" data-quitar="' + l.id + '" aria-label="Quitar este producto">' + ic("i-x") + "</button></div>" +
+      '<div class="linea-cab" style="margin-top:8px"><span style="flex:1;color:var(--gris);font-weight:700;font-size:.9rem">Cantidad</span>' +
+      '<div class="mm"><button type="button" class="mm-b lib" data-lib="' + l.id + '" data-d="-1" aria-label="Sacar uno"' + (l.c > 1 ? "" : " disabled") + ">" + ic("i-menos") + "</button>" +
+      "<output>" + l.c + '</output><button type="button" class="mm-b mas lib" data-lib="' + l.id + '" data-d="1" aria-label="Sumar uno">' + ic("i-mas") + "</button></div></div>" +
+      '<p class="error" data-err-lib="' + l.id + '">Escribí qué producto buscás.</p></li>');
+  });
+  $("#lineas").innerHTML = L.join("");
+  pintarCuentas();
+}
+
+function agregarLibre(texto, foco) {
+  const l = { id: sigLibre++, n: texto || "", det: "", c: 1 };
+  pedido.libres.push(l); guardar(); pintarLineas(); actualizarEnvio();
+  if (foco) {
+    const inp = $("#lib-n-" + l.id);
+    if (inp) { inp.scrollIntoView({ block: "center", behavior: quieto() ? "auto" : "smooth" }); setTimeout(() => { inp.focus({ preventScroll: true }); if (texto) inp.setSelectionRange(inp.value.length, inp.value.length); }, quieto() ? 0 : 450); }
+  }
+}
+
+/* ---------- el formulario ---------- */
+function pintarFormulario() {
+  const una = VISIBLES.length <= 1;
+  $("#campo-suc").hidden = una;
+  $("#opc-suc").innerHTML = VISIBLES.map((s) =>
+    '<label class="opcion"><input type="radio" name="suc" value="' + esc(s.id) + '"><span>' + esc(s.nombre) + "<small>" + esc(s.direccion) + "</small></span></label>").join("");
+  $("#opc-pago").innerHTML = PAGOS.map((p) => '<label class="opcion"><input type="radio" name="pago" value="' + esc(p) + '"><span>' + esc(p) + "</span></label>").join("");
+  if (!ENVIO.hay) $$("input[name=entrega]")[1].closest(".opcion").hidden = true;
+  $("#envio-nota").innerHTML = esc(ENVIO.texto) + (ENVIO.confirmado ? "" : " " + CHIP);
+  $("#aviso-demo").hidden = !DEMO;
+  // recuperar lo que ya había escrito
+  const f = pedido.form || {};
+  if (f.suc && VISIBLES.some((s) => s.id === f.suc)) $("input[name=suc][value='" + f.suc + "']").checked = true;
+  if (una && VISIBLES[0]) $("input[name=suc]").checked = true;
+  if (f.entrega === "envio" && ENVIO.hay) $("input[name=entrega][value=envio]").checked = true;
+  if (f.pago && PAGOS.includes(f.pago)) $$("input[name=pago]").find((x) => x.value === f.pago).checked = true;
+  $("#f-nombre").value = f.nombre || ""; $("#f-dir").value = f.dir || ""; $("#f-entre").value = f.entre || ""; $("#f-com").value = f.com || "";
+}
+const val = (sel) => { const x = $(sel); return x ? x.value.trim() : ""; };
+const radio = (n) => { const x = $("input[name=" + n + "]:checked"); return x ? x.value : ""; };
+function datos() {
+  return {
+    suc: VISIBLES.find((s) => s.id === radio("suc")) || (VISIBLES.length === 1 ? VISIBLES[0] : null),
+    entrega: radio("entrega") || "retiro",
+    nombre: val("#f-nombre"), dir: val("#f-dir"), entre: val("#f-entre"),
+    pago: radio("pago"), com: val("#f-com"),
+  };
+}
+function guardarForm() {
+  const d = datos();
+  pedido.form = { suc: d.suc ? d.suc.id : "", entrega: d.entrega, nombre: d.nombre, dir: d.dir, entre: d.entre, pago: d.pago, com: d.com };
+  guardar();
+}
+function actualizarEnvio() {
+  const envio = radio("entrega") === "envio";
+  $$(".solo-envio").forEach((x) => { x.hidden = !envio; });
+}
+
+// suave = true: solo borra los errores que ya se corrigieron (mientras escribe), sin mover el foco
+function validar(suave) {
+  const d = datos();
+  const malos = [];
+  const marcar = (el, mal) => { if (!el) return; if (mal && !suave) el.classList.add("invalido"); if (!mal) el.classList.remove("invalido"); if (mal) malos.push(el); };
+  const sinItems = lineasTotal() === 0;
+  if (!suave) $("#error-items").classList.toggle("ver", sinItems);
+  else if (!sinItems) $("#error-items").classList.remove("ver");
+  if (sinItems) malos.push($("#agregar-otro"));
+  pedido.libres.forEach((l) => {
+    const li = $("[data-libre='" + l.id + "']"), mal = !l.n.trim();
+    if (li) { const err = $("[data-err-lib='" + l.id + "']", li), inp = $("#lib-n-" + l.id);
+      if (mal && !suave) { err.classList.add("ver"); inp.classList.add("invalido"); }
+      if (!mal) { err.classList.remove("ver"); inp.classList.remove("invalido"); }
+      if (mal) malos.push(inp); }
+  });
+  marcar($("#campo-suc"), !d.suc);
+  marcar($("#campo-dir"), d.entrega === "envio" && !d.dir);
+  marcar($("#campo-nombre"), !d.nombre);
+  if (!suave && malos.length) {
+    const primero = malos[0];
+    const foco = primero.matches("input,textarea,button,a") ? primero : $("input", primero);
+    if (foco) { foco.scrollIntoView({ block: "center", behavior: quieto() ? "auto" : "smooth" }); foco.focus({ preventScroll: true }); }
+  }
+  return malos.length === 0;
+}
+
+/* ---------- el mensaje ---------- */
+function mensaje(d) {
+  const L = ["*Pedido web · " + LOCAL.nombre + "*"];
+  if (d.suc) L.push("Local: " + d.suc.nombre + " (" + d.suc.direccion + ")");
+  L.push("", "*Productos*");
+  Object.keys(pedido.items).forEach((k) => {
+    const det = (pedido.det[k] || "").trim();
+    L.push("• " + pedido.items[k] + " × " + PROD[k].n + (det ? ": " + det : ""));
+  });
+  pedido.libres.forEach((l) => { if (l.n.trim()) L.push("• " + l.c + " × " + l.n.trim()); });
+  L.push("");
+  if (d.entrega === "envio") {
+    L.push("*Entrega:* Envío a domicilio" + (ENVIO.confirmado ? "" : " (costo a confirmar)"));
+    L.push("*Dirección:* " + d.dir);
+    if (d.entre) L.push("*Entre calles:* " + d.entre);
+  } else {
+    L.push("*Entrega:* Lo retiro en el local");
+  }
+  L.push("*Nombre:* " + d.nombre);
+  if (d.pago) L.push("*Pago:* " + d.pago);
+  if (d.com) L.push("*Comentario:* " + d.com);
+  L.push("", "¿Me confirmás precio y disponibilidad?");
+  return L.join("\n");
+}
+function actualizarEnviar() {
+  const d = datos();
+  const numero = (d.suc && d.suc.whatsapp) || WA_GENERAL;
+  $("#enviar").href = linkWA(numero, mensaje(d));
+}
+
+/* ---------- arranque ---------- */
+paso("vista previa", () => {
+  if (VISTA_PREVIA) { $("#previa").textContent = VISTA_PREVIA; $("#previa").hidden = false; }
+  $("#pie-demo").hidden = !DEMO;
+});
+
+paso("links de WhatsApp", () => {
+  $("#wa-portada").href = linkWA(WA_GENERAL, SALUDO);
+  $("#wa-flota").href = linkWA(WA_GENERAL, SALUDO);
+  $("#wa-vivero").href = linkWA(WA_GENERAL, "Hola! Quería consultar por una planta: ");
+  // el botón verde: sin pedido abre el chat; con pedido lleva al pedido
+  $("#wa-flota").addEventListener("click", (e) => {
+    if (lineasTotal() > 0) { e.preventDefault(); $("#pedido").scrollIntoView({ behavior: quieto() ? "auto" : "smooth" }); }
+  });
+});
+
+paso("abierto ahora", () => {
+  function pintar() {
+    const e = estadoDe(HORARIO);
+    [["#estado-cab", e.corto], ["#estado-portada", e.texto]].forEach(([sel, t]) => {
+      const el = $(sel); el.className = "estado " + e.clase; el.textContent = t;
+    });
+    $$("[data-estado-suc]").forEach((el) => {
+      const s = SUCURSALES.find((x) => x.id === el.dataset.estadoSuc); const es = estadoDe(horarioDe(s));
+      el.className = "estado " + es.clase; el.textContent = es.texto;
+    });
+  }
+  if (HORARIO) {
+    $("#horario-portada").textContent = diasAgrupados(HORARIO).map((g) => g.dias + " " + g.t.replace(" h", " h").replace("Cerrado", "cerrado")).join(" · ");
+    $("#chip-horario").hidden = !!HORARIO.confirmado;
+  }
+  window.__pintarEstado = pintar;
+  pintar();
+  setInterval(pintar, 60 * 1000);
+});
+
+paso("promos", () => {
+  const items = PROMOS.map((p) => '<p class="promo">' + ic("i-etiqueta") + "<span>" + esc(p.titulo) + (p.detalle ? " <small>" + esc(p.detalle) + "</small>" : "") + "</span>" + (p.confirmada ? "" : CHIP) + "</p>");
+  if (PROMOS_INSTAGRAM && LOCAL.instagram) items.push('<p class="promo"><a href="' + esc(LOCAL.instagram) + '" target="_blank" rel="noopener">Mirá las promos del momento en Instagram</a></p>');
+  if (items.length) { $("#promos-lista").innerHTML = items.join(""); $("#promos").hidden = false; }
+  $("#promos").classList.add("oscuro");
+});
+
+paso("catálogo", pintarCatalogo);
+paso("recuperar pedido", recuperar);
+paso("formulario", () => { pintarFormulario(); actualizarEnvio(); });
+paso("pedido", () => {
+  pintarLineas();
+  // un solo escuchador para todos los − y + (catálogo y pedido)
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".mm-b"); if (!b || b.disabled) return;
+    const d = Number(b.dataset.d);
+    if (b.dataset.lib) {
+      const l = pedido.libres.find((x) => String(x.id) === b.dataset.lib); if (!l) return;
+      l.c = Math.max(1, Math.min(99, l.c + d)); guardar();
+      const box = b.parentNode; $("output", box).textContent = l.c; $(".mm-b[data-d='-1']", box).disabled = l.c <= 1;
+      pintarCuentas(); actualizarEnviar(); return;
+    }
+    const k = b.parentNode.dataset.k;
+    const antes = pedido.items[k] || 0;
+    const ahora = Math.max(0, Math.min(99, antes + d));
+    if (ahora) pedido.items[k] = ahora; else { delete pedido.items[k]; delete pedido.det[k]; }
+    guardar();
+    const enLinea = !!b.closest(".linea");
+    if ((antes === 0) !== (ahora === 0)) {
+      // cambió la lista: se redibuja, cuidando el foco si se tocó desde el pedido
+      pintarLineas();
+      if (enLinea && ahora === 0) { const sig = $("#lineas .mm-b") || $("#agregar-otro"); sig && sig.focus(); }
+    } else pintarCuentas();
+    $$(".mm[data-k='" + k + "']").forEach((box) => { box.classList.remove("salta"); void box.offsetWidth; box.classList.add("salta"); });
+    validar(true); actualizarEnviar();
+  });
+  $("#lineas").addEventListener("input", (e) => {
+    const t = e.target;
+    if (t.dataset.det) pedido.det[t.dataset.det] = t.value;
+    if (t.dataset.libN) { const l = pedido.libres.find((x) => String(x.id) === t.dataset.libN); if (l) l.n = t.value; }
+    guardar(); validar(true); actualizarEnviar();
+  });
+  $("#lineas").addEventListener("click", (e) => {
+    const q = e.target.closest("[data-quitar]"); if (!q) return;
+    pedido.libres = pedido.libres.filter((l) => String(l.id) !== q.dataset.quitar);
+    guardar(); pintarLineas(); actualizarEnviar();
+    const sig = $("#lineas .mm-b, #lineas input") || $("#agregar-otro"); sig && sig.focus();
+  });
+  $("#agregar-otro").addEventListener("click", () => agregarLibre("", true));
+  $("#sumar-planta").addEventListener("click", () => agregarLibre("Planta: ", true));
+  $("#form").addEventListener("input", () => { guardarForm(); validar(true); actualizarEnviar(); });
+  $("#form").addEventListener("change", () => { actualizarEnvio(); guardarForm(); validar(true); actualizarEnviar(); });
+  $("#form").addEventListener("submit", (e) => e.preventDefault());
+  $("#enviar").addEventListener("click", (e) => {
+    if (!validar(false)) { e.preventDefault(); return; }
+    actualizarEnviar();   // el <a target=_blank> sale solo con el href ya armado
+  });
+  window.addEventListener("resize", pintarCuentas);
+  actualizarEnviar();
+});
+
+paso("vivero", () => {
+  if (VIVERO_DONDE) $("#vivero-donde").textContent = VIVERO_DONDE;
+  else $("#vivero-donde").innerHTML = "<b>¿En qué local está el vivero?</b> " + CHIP;
+});
+
+paso("sucursales", () => {
+  $("#sucs").innerHTML = VISIBLES.map((s) => {
+    const hor = horarioDe(s);
+    const foto = s.foto
+      ? '<div class="suc-foto"><img src="' + esc(s.foto) + '" alt="El frente del local de ' + esc(s.direccion) + '" loading="lazy"></div>'
+      : '<div class="foto-pend">' + ic("i-camara") + "Foto del local pendiente</div>";
+    const dias = hor ? '<dl class="dias">' + diasAgrupados(hor).map((g) => "<dt>" + esc(g.dias) + "</dt><dd>" + esc(g.t) + "</dd>").join("") + "</dl>" : "";
+    const chip = (!s.confirmada || (hor && !hor.confirmado)) ? CHIP : "";
+    return '<article class="suc" id="local-' + esc(s.id) + '">' + foto + '<div class="suc-cuerpo">' +
+      "<h3>" + esc(s.nombre) + " " + chip + "</h3>" +
+      '<p class="dir">' + esc(s.direccion) + (s.referencia ? "<small>" + esc(s.referencia) + " · " + esc(LOCAL.ciudad) + "</small>" : "") + "</p>" +
+      '<span class="estado" data-estado-suc="' + esc(s.id) + '"></span>' + dias +
+      (s.nota ? '<p class="nota">' + esc(s.nota) + "</p>" : "") +
+      '<div class="suc-acc">' +
+        (s.maps ? '<a class="btn btn-borde btn-chico" href="' + esc(s.maps) + '" target="_blank" rel="noopener">' + ic("i-pin") + "Cómo llegar</a>" : "") +
+        '<a class="btn btn-pedido btn-chico" href="#pedido" data-pedir-suc="' + esc(s.id) + '">' + ic("i-bolsa") + "Pedir a este local</a>" +
+      "</div></div></article>";
+  }).join("");
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-pedir-suc]"); if (!a) return;
+    const r = $("input[name=suc][value='" + a.dataset.pedirSuc + "']"); if (r) { r.checked = true; guardarForm(); validar(true); actualizarEnviar(); }
+  });
+  window.__pintarEstado && window.__pintarEstado();
+});
+
+paso("redes", () => {
+  const r = [];
+  if (LOCAL.instagram) r.push('<a href="' + esc(LOCAL.instagram) + '" target="_blank" rel="noopener">' + ic("i-ig") + "Instagram</a>");
+  if (LOCAL.facebook) r.push('<a href="' + esc(LOCAL.facebook) + '" target="_blank" rel="noopener">' + ic("i-fb") + "Facebook</a>");
+  $("#redes").innerHTML = r.join("");
+});
+
+paso("guiño: pisadas que brotan", () => {
+  // posiciones (en % del ancho) y altura sobre la tierra; alternan pie izquierdo y derecho
+  const PISADAS = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95];
+  const brote = '<svg class="brote" viewBox="0 0 18 32"><path d="M9 32V12" stroke="#2F5D14" stroke-width="2.4" stroke-linecap="round"/>' +
+    '<path d="M9 16C4 16 1 12 1 7c5 0 8 4 8 9z" fill="#7EBC06"/><path d="M9 13c0-6 3-10 8-11 0 6-3 10-8 11z" fill="#2F5D14"/></svg>';
+  $("#sendero").insertAdjacentHTML("beforeend", PISADAS.map((x, i) =>
+    '<span class="paso" style="--i:' + i + ";--x:" + x + "%;--y:" + (i % 2 ? 10 : 28) + "px;--r:" + (i % 2 ? 100 : 80) + 'deg">' +
+    '<svg class="pata" viewBox="0 0 24 24"><use href="#i-pata"/></svg>' + brote + "</span>").join(""));
+});
+
+paso("ficha para Google", () => {
+  const dias = { lun: "Monday", mar: "Tuesday", mie: "Wednesday", jue: "Thursday", vie: "Friday", sab: "Saturday", dom: "Sunday" };
+  const horas = (hor) => { const r = []; if (!hor) return r;
+    Object.keys(dias).forEach((d) => tramos(hor[d]).forEach(([a, b]) => r.push({ "@type": "OpeningHoursSpecification", dayOfWeek: dias[d],
+      opens: String(Math.floor(a)).padStart(2, "0") + ":" + String(Math.round((a % 1) * 60)).padStart(2, "0"),
+      closes: String(Math.floor(b % 24)).padStart(2, "0") + ":" + String(Math.round((b % 1) * 60)).padStart(2, "0") }))); return r; };
+  const local = (s) => ({ "@type": "PetStore", name: LOCAL.nombre + " · " + s.nombre,
+    address: { "@type": "PostalAddress", streetAddress: s.direccion, addressLocality: "Mar del Plata", addressRegion: "Buenos Aires", addressCountry: "AR" },
+    openingHoursSpecification: horas(horarioDe(s)) });
+  const ficha = { "@context": "https://schema.org", "@type": "PetStore", name: LOCAL.nombre, description: "Pet shop y vivero en Mar del Plata.",
+    sameAs: [LOCAL.instagram, LOCAL.facebook].filter(Boolean), paymentAccepted: PAGOS.join(", ") };
+  if (VISIBLES.length === 1) Object.assign(ficha, local(VISIBLES[0]), { name: LOCAL.nombre });
+  else ficha.department = VISIBLES.map(local);
+  const s = document.createElement("script"); s.type = "application/ld+json"; s.textContent = JSON.stringify(ficha); document.head.appendChild(s);
+});
+
+})();
+</script>
+</body>
+</html>
