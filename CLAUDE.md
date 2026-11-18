@@ -32,7 +32,7 @@ Plata: alimento y accesorios para perros y gatos, y plantas.
 - Estado: **demo de venta (fase 0), todavía no es cliente**. Armada el 18/11/2026.
 - Sitio: sin dominio ni publicación todavía.
 - Repo: `berchotmateo-spec/como-perro-y-gato`, rama de trabajo `claude/relaxed-planck-ci1kz7`.
-- Vista previa (Artifact, privada): ver "Registro de cambios" (link al final de la primera entrada) — se arma con `python3 vista-previa.py <carpeta>`.
+- Vista previa (Artifact, privada): https://claude.ai/artifact/WfXrpRJ33jyFa9YkrRnuFP — se arma con `python3 vista-previa.py <carpeta> "Como Perro y Gato"` y se publica siempre en la misma ruta (desde otra conversación, pasando este link).
 
 Marcas de demo (se sacan el día que el dueño compra):
 `VISTA_PREVIA` (barra amarilla arriba), `DEMO = true` (aviso en el pie y debajo
