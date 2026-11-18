@@ -36,7 +36,7 @@ CABECERA = RAIZ / "publicar-cabecera.html"
 
 # Carpetas y archivos sueltos que viajan a docs/ tal cual.
 CARPETAS = ["fotos", "img"]
-SUELTOS = ["og.jpg", "icono.png", "favicon.ico", "logo.png"]
+SUELTOS = ["og.jpg", "icono.png", "favicon.ico", "logo.png", "panel.html"]   # panel.html: el panel del local (Como Perro y Gato)
 
 
 def armar_html():

@@ -151,6 +151,58 @@ Mensaje de prueba real (18/11/2026):
 ¿Me confirmás precio y disponibilidad?
 ```
 
+## Panel del local (facturación y control de stock)
+
+Pedido de Mateo (18/11/2026): "que tenga sistema de facturación y control de stock".
+Es `panel.html`, **privado del local** y separado de la página pública (no hay
+link desde la web; `noindex`). Vista previa aparte: https://claude.ai/artifact/Ks192RKDtiVX26yDHCmGeS
+(privada, con permiso `downloads` para la planilla). Se arma con
+`PAGINA=panel.html python3 vista-previa.py <carpeta> "Panel Como Perro y Gato"`
+y se publica con `capabilities: {downloads: true}`.
+
+- **Vender (caja):** buscador, tocar para sumar, − y +, descuento %, medio de
+  pago (efectivo, transferencia, débito, crédito), cliente opcional, **Cobrar**.
+  No deja vender más de lo que hay. Al cobrar descuenta el stock y abre el comprobante.
+- **Comprobante:** numerado (N° 0001…), con los datos del local, y la leyenda
+  **"Documento no válido como factura"**. Se manda por WhatsApp (texto) o se imprime.
+  Una venta se puede **anular** (dos toques) y devuelve el stock.
+- **Stock:** lista con "Sin stock" / "Quedan N" según el mínimo de cada producto,
+  filtros, **Ingreso** de mercadería (con nota: proveedor, remito) y **Corregir**
+  por conteo. Todo queda en "Últimos movimientos". Aviso de stock bajo en Vender
+  y globito en el menú. El stock de un producto existente solo cambia por
+  ingreso, corrección, venta o anulación (queda registrado).
+- **Ventas:** cierre de caja por día (total, cantidad, productos, total por medio
+  de pago), lista de comprobantes y **Planilla del mes** (CSV con `;`, para Excel
+  y el contador).
+- **Ajustes:** datos del comprobante (nombre, dirección, CUIT, condición IVA,
+  texto al pie), la tarjeta de factura electrónica y la **Prueba**: "Cargar
+  productos de ejemplo" (8 productos genéricos, sin marcas, precios inventados,
+  marcados "ejemplo") y "Borrar todo" (dos toques).
+
+**Factura electrónica (ARCA): NO está conectada, y a propósito.** El panel no
+inventa CAE ni imita una factura. Para facturar de verdad hace falta: CUIT y
+condición (monotributo → factura C), un punto de venta para web service, el
+certificado digital (lo saca el dueño con su clave fiscal) y **un servidor** que
+firme (el certificado nunca va en el HTML). Caminos: un servicio de facturación
+con API (pago mensual) o una función propia en Supabase. Hasta entonces, el
+dueño puede seguir facturando en "Comprobantes en línea" de ARCA con los datos
+del comprobante.
+
+**Dónde se guardan los datos:** hoy, en el navegador de ese aparato
+(`localStorage`, clave `cpyg-panel-v1`). Sirve para la demo, pero **no** para
+usarlo de verdad: si el celular se borra, se pierde, y la compu y el celular no
+ven lo mismo. Cuando compre: Supabase como en `zoo-center` (tablas productos,
+ventas y movimientos con RLS sin políticas, solo funciones, y una clave del local;
+la venta descuenta el stock en la base, en una sola operación). Todo el acceso a
+los datos está en `cargar()` / `guardar()` / `mover()` para cambiarlo en un lugar.
+
+Probado (18/11/2026) en celular y compu con Playwright: cargar ejemplo, vender
+sin pasarse del stock, cobrar sin medio de pago (no deja), descuento, comprobante,
+ingreso, corrección, filtros, producto nuevo, cierre del día, planilla CSV,
+anular (devuelve stock), recargar (sigue todo), sin errores ni desborde a 1366,
+390 y 320 px. La impresión y la descarga dentro de la vista previa no se pudieron
+probar desde acá.
+
 ## PENDIENTES PARA EL DUEÑO
 
 - [ ] **Horario** (días y horas; ¿cortan al mediodía?) → `HORARIO` (hay un ejemplo comentado arriba).
@@ -163,6 +215,9 @@ Mensaje de prueba real (18/11/2026):
 - [ ] **Fotos reales**: frente y adentro → `SUCURSALES[0].foto`. La foto del frente de Mateo podría ir, pero muestra el WhatsApp de la vidriera: esperar a que se pueda publicar ese número.
 - [ ] **Logo original** (archivo).
 - [ ] ¿Quieren **precios** en la web? Solo si los pasa el dueño, con fecha.
+- [ ] **Panel:** ¿necesita **factura electrónica** de verdad (ARCA) o le alcanza el comprobante? Si sí: CUIT, condición (¿monotributo?) y si ya tiene punto de venta.
+- [ ] **Panel:** ¿quién lo usa y en qué aparatos (celular del mostrador, compu)? Define si hace falta Supabase desde el día uno (sí, si son dos o más aparatos).
+- [ ] **Panel:** su lista de productos con precio y stock (puede ser una planilla; se carga de una vez).
 
 ## PROVISORIO
 
@@ -197,17 +252,20 @@ Mensaje de prueba real (18/11/2026):
 - [ ] Sacar las marcas de demo (ver arriba) al cerrar.
 - [ ] GitHub Pages (`python3 publicar.py`; mientras sea demo el `noindex` ya va en el `index.html`), dominio, Search Console, Perfil de Empresa (ojo con el homónimo: que la ficha quede con Teodoro Bronzini 614).
 - [ ] QR.
+- [ ] Panel: pasar los datos a Supabase (ver "Panel del local") y, si lo contrata, conectar la factura electrónica.
 
 ## Cómo se trabaja acá
 
 1. Los datos están arriba del `<script>` de `index.html`: `LOCAL`, `SUCURSALES`, `HORARIO`, `ENVIO`, `PAGOS`, `PROMOS`, `CATEGORIAS`, `MARCAS`.
 2. Verificar: `node verificar.mjs index.html` (de la skill) a 1366, 390 y 320 px, y un pedido de punta a punta leyendo el mensaje.
 3. Commit + push → `python3 vista-previa.py <carpeta> "Como Perro y Gato"` → publicar el Artifact en la misma ruta.
+4. Panel: `PAGINA=panel.html python3 vista-previa.py <otra-carpeta> "Panel Como Perro y Gato"` → publicar en su ruta, con `capabilities: {downloads: true}`.
 
 ## Registro de cambios
 
 Una línea por pedido, la más nueva arriba.
 
+- 18/11/2026 — Mateo: "que tenga sistema de facturación y control de stock" → `panel.html`, panel privado del local: caja, comprobante no fiscal numerado (WhatsApp / imprimir / anular), stock con ingresos, correcciones, mínimos y movimientos, cierre del día y planilla del mes. Factura electrónica ARCA explicada y sin conectar (necesita CUIT, certificado y servidor). Datos en el navegador para la demo; Supabase al vender.
 - 18/11/2026 — Mateo: "Teodoro Bronzini 614 es la altura del local" → dirección, "Cómo llegar" y ficha de Google con el 614; abajo, "Cerca de Ituzaingó". Ya no lleva chip "A confirmar" (el horario sigue a confirmar).
 - 18/11/2026 — Mateo: "quitá el vivero y la sucursal de San Martín, no son de este pet shop" → un solo local (Bronzini e Ituzaingó), sin vivero (sección, categoría y botón). Se sacó también todo lo que venía de ese otro negocio: Instagram, Facebook, horario de la bio (queda "Horario a confirmar"), marcas de su tienda (quedan las del frente: Sileoni, Royal Canin, Bonelo). Guiño nuevo "como perro y gato" (huellas que se cruzan) y comedero en lugar de la maceta.
 - 18/11/2026 — Mateo mandó el cartel de cerca ("lo que sería el logo") → logo enderezado y limpio en la portada y el pie (`img/logo-cartel.webp`). Sileoni no se usa en el diseño (es del proveedor). El WhatsApp de la vidriera sigue sin ponerse, como pidió.

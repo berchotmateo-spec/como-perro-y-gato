@@ -26,13 +26,15 @@
   para eso está publicar.py.
 ============================================================
 """
+import os
 import pathlib
 import re
 import shutil
 import sys
 
 RAIZ = pathlib.Path(__file__).resolve().parent
-html = (RAIZ / "index.html").read_text(encoding="utf-8")
+# PAGINA=panel.html python3 vista-previa.py <carpeta> "Título" → arma la vista previa del panel del local
+html = (RAIZ / os.environ.get("PAGINA", "index.html")).read_text(encoding="utf-8")
 
 estilos = "\n".join(re.findall(r"<style[^>]*>.*?</style>", html.split("<body")[0], re.S))
 cuerpo = re.search(r"<body[^>]*>(.*)</body>", html, re.S)
