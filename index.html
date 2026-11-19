@@ -555,9 +555,10 @@ const LOCAL = {
   nombre: "Como Perro y Gato",
   bajada: "Pet Shop",
   ciudad: "Mar del Plata",
-  // Redes: "" = no se muestran. OJO: @comoperroygato__ y facebook.com/comoperroygatomdq son de OTRO
-  // pet shop con el mismo nombre (San Martín 4090, con vivero). No ponerlas.
-  instagram: "",
+  // Redes: "" = no se muestran. El Instagram lo pasó Mateo el 19/11/2026.
+  // OJO: @comoperroygato__ y facebook.com/comoperroygatomdq son de OTRO pet shop con el mismo
+  // nombre (San Martín 4090, con vivero). No ponerlas.
+  instagram: "https://www.instagram.com/petshop.comoperroygato/",
   facebook: "",
 };
 
@@ -591,7 +592,7 @@ const PAGOS = ["Efectivo", "Transferencia", "Tarjeta de débito"];
 const PROMOS = [
   { titulo: "Pagando en efectivo, 10 % de reintegro en alimentos", detalle: "", confirmada: false },
 ];
-const PROMOS_INSTAGRAM = true;   // agrega "Mirá las promos del momento en Instagram" (solo si LOCAL.instagram tiene algo)
+const PROMOS_INSTAGRAM = false;  // true agrega "Mirá las promos del momento en Instagram" (solo si de verdad suben promos)
 
 // --- Categorías y productos (LISTA DE REFERENCIA, sin precios).
 //     k: clave única (no cambiarla: es lo que se guarda en el pedido) · n: nombre · d: detalle chico
@@ -1016,7 +1017,9 @@ paso("sucursales", () => {
 
 paso("redes", () => {
   const r = [];
-  if (LOCAL.instagram) r.push('<a href="' + esc(LOCAL.instagram) + '" target="_blank" rel="noopener">' + ic("i-ig") + "Instagram</a>");
+  // se muestra el usuario (@…) y no solo "Instagram": hay otro local con el mismo nombre
+  const usuarioIG = (LOCAL.instagram.match(/instagram\.com\/([^/?#]+)/) || [])[1];
+  if (LOCAL.instagram) r.push('<a href="' + esc(LOCAL.instagram) + '" target="_blank" rel="noopener">' + ic("i-ig") + esc(usuarioIG ? "@" + usuarioIG : "Instagram") + "</a>");
   if (LOCAL.facebook) r.push('<a href="' + esc(LOCAL.facebook) + '" target="_blank" rel="noopener">' + ic("i-fb") + "Facebook</a>");
   $("#redes").innerHTML = r.join("");
   $("#redes").hidden = !r.length;

@@ -53,7 +53,8 @@ Mateo (`WHATSAPP_DEMO`), y los chips punteados "A confirmar".
 | Medios de pago | Efectivo, transferencia, débito | **los puso Claude** | a confirmar |
 | Promo | "Pagando en efectivo, 10 % de reintegro en alimentos" | cartel de la vidriera de este local | a confirmar (chip) |
 | Marcas | Sileoni, Royal Canin, Bonelo | carteles del frente, cartel de la vidriera y pizarrón | lista de referencia |
-| Redes | ninguna (`LOCAL.instagram` y `facebook` vacíos) | las encontradas son del otro | preguntar si tienen |
+| Instagram | @petshop.comoperroygato (en el pie, con el usuario a la vista, y en la ficha de Google) | Mateo, 19/11/2026 | ok. No se pudo abrir desde la sesión: falta leer su bio (horario, WhatsApp) |
+| Facebook | ninguno (`LOCAL.facebook` vacío) | el encontrado es del otro | preguntar si tienen |
 | Logo | `img/logo-cartel.webp`: el cartel del frente, enderezado y limpio | captura que mandó Mateo, 18/11/2026 | provisorio: pedir el archivo original |
 | Coordenadas | — | — | no hacen falta: "Cómo llegar" busca la esquina |
 | Colores | ver Diseño | medidos sobre la foto del frente | provisorios |
@@ -211,7 +212,8 @@ probar desde acá.
 - [ ] **Medios de pago** (los puse yo: efectivo, transferencia, débito) → `PAGOS`.
 - [ ] **10 % en efectivo**: ¿sigue? ¿solo alimentos? → `PROMOS`.
 - [ ] **Qué venden de verdad** y qué **marcas** trabajan → `CATEGORIAS` y `MARCAS`.
-- [ ] **¿Tienen Instagram o Facebook propios?** → `LOCAL.instagram` / `facebook`.
+- [ ] **¿Tienen Facebook propio?** → `LOCAL.facebook`. (Instagram: @petshop.comoperroygato, ya puesto.)
+- [ ] **Bio y destacadas de @petshop.comoperroygato** (captura): horario, WhatsApp, si suben promos (`PROMOS_INSTAGRAM = true` agrega "Mirá las promos del momento en Instagram").
 - [ ] **Fotos reales**: frente y adentro → `SUCURSALES[0].foto`. La foto del frente de Mateo podría ir, pero muestra el WhatsApp de la vidriera: esperar a que se pueda publicar ese número.
 - [ ] **Logo original** (archivo).
 - [ ] ¿Quieren **precios** en la web? Solo si los pasa el dueño, con fecha.
@@ -265,6 +267,7 @@ probar desde acá.
 
 Una línea por pedido, la más nueva arriba.
 
+- 19/11/2026 — Mateo pasó el Instagram del local: @petshop.comoperroygato → en el pie (el botón muestra el usuario, por el homónimo) y en la ficha de Google (`sameAs`). Sin el `?gwpx=…` de seguimiento. No se agregó "promos del momento" porque no pudimos ver si suben promos.
 - 18/11/2026 — Mateo: "que tenga sistema de facturación y control de stock" → `panel.html`, panel privado del local: caja, comprobante no fiscal numerado (WhatsApp / imprimir / anular), stock con ingresos, correcciones, mínimos y movimientos, cierre del día y planilla del mes. Factura electrónica ARCA explicada y sin conectar (necesita CUIT, certificado y servidor). Datos en el navegador para la demo; Supabase al vender.
 - 18/11/2026 — Mateo: "Teodoro Bronzini 614 es la altura del local" → dirección, "Cómo llegar" y ficha de Google con el 614; abajo, "Cerca de Ituzaingó". Ya no lleva chip "A confirmar" (el horario sigue a confirmar).
 - 18/11/2026 — Mateo: "quitá el vivero y la sucursal de San Martín, no son de este pet shop" → un solo local (Bronzini e Ituzaingó), sin vivero (sección, categoría y botón). Se sacó también todo lo que venía de ese otro negocio: Instagram, Facebook, horario de la bio (queda "Horario a confirmar"), marcas de su tienda (quedan las del frente: Sileoni, Royal Canin, Bonelo). Guiño nuevo "como perro y gato" (huellas que se cruzan) y comedero en lugar de la maceta.
