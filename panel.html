@@ -216,6 +216,8 @@ html:has(dialog[open]){overflow:hidden}
 .comp td:last-child{text-align:right;white-space:nowrap;padding-left:10px}
 .comp .tot td{border-top:1px solid var(--negro);font-weight:800;font-size:1.05rem;padding-top:8px}
 .comp .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;color:var(--gris);font-size:.85rem;margin-bottom:8px}
+.comp .c-logo{display:block;width:88px;height:auto;margin:0 auto 8px;border-radius:12px}
+.estado-pdf{flex-basis:100%;margin:2px 0 0;font-weight:700;font-size:.88rem;color:var(--hoja)}
 .sello-anulada{display:inline-block;margin:6px 0;padding:.2em .6em;border:2px solid var(--rojo);color:var(--rojo);font-weight:800;border-radius:8px;transform:rotate(-3deg)}
 @media print{
   body *{visibility:hidden}
@@ -240,6 +242,7 @@ html:has(dialog[open]){overflow:hidden}
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.2"/></symbol>
   <symbol id="i-imprimir" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><rect x="6" y="14" width="12" height="7"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1c0 1.2.9 2.4 1 2.6.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.2z"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></symbol>
   <symbol id="i-bajar" viewBox="0 0 24 24"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></symbol>
 </svg>
 
@@ -333,31 +336,15 @@ html:has(dialog[open]){overflow:hidden}
 <section class="vista" id="v-ajustes" aria-labelledby="t-ajustes" hidden>
   <div class="envolver">
     <h2 id="t-ajustes">Ajustes y facturación</h2>
-    <p class="sub">Los datos que salen en el comprobante.</p>
+    <p class="sub">Los datos que salen en el comprobante (el PDF que le llega al cliente).</p>
     <div class="ajustes">
       <form class="caja" id="f-local" novalidate>
         <h3>Datos del local</h3>
         <div class="campo"><label class="et" for="a-nombre">Nombre</label><input type="text" id="a-nombre" maxlength="80"></div>
         <div class="campo"><label class="et" for="a-dir">Dirección</label><input type="text" id="a-dir" maxlength="120"></div>
-        <div class="fila2">
-          <div class="campo"><label class="et" for="a-cuit">CUIT</label><input type="text" id="a-cuit" maxlength="13" inputmode="numeric" placeholder="20-12345678-9"></div>
-          <div class="campo"><label class="et" for="a-iva">Condición IVA</label><select id="a-iva"><option value="">—</option><option>Monotributo</option><option>Responsable inscripto</option><option>Exento</option></select></div>
-        </div>
         <div class="campo"><label class="et" for="a-pie">Texto al pie del comprobante <span style="font-weight:600;color:var(--gris)">(opcional)</span></label><input type="text" id="a-pie" maxlength="120" placeholder="Ej.: ¡Gracias por tu compra!"></div>
         <button type="submit" class="btn btn-prim">Guardar</button> <span class="guardado" id="guardado" hidden>Guardado</span>
       </form>
-      <div class="caja">
-        <h3>Factura electrónica (ARCA)</h3>
-        <p class="aviso info" style="margin-bottom:10px"><svg class="ic"><use href="#i-info"/></svg><span>Hoy el panel da un <b>comprobante de venta, no válido como factura</b>. La factura electrónica se conecta cuando el local la contrate.</span></p>
-        <p style="margin:0">Para facturar desde acá hace falta:</p>
-        <ol class="pasos">
-          <li>El <b>CUIT</b> y la condición (monotributo da factura C).</li>
-          <li>Un <b>punto de venta</b> de ARCA para "factura electrónica por web service".</li>
-          <li>El <b>certificado digital</b>, que se saca con la clave fiscal del dueño.</li>
-          <li>Conectarlo al panel. Con eso, cada venta sale con su número de factura y su CAE.</li>
-        </ol>
-        <button type="button" class="btn btn-borde btn-ancho" disabled style="margin-top:12px">Facturar en ARCA · se activa con el CUIT</button>
-      </div>
       <div class="caja" id="caja-demo">
         <h3>Prueba</h3>
         <p style="margin:0 0 10px">Para mostrar el panel funcionando, cargá productos de ejemplo (nombres y precios inventados, marcados "ejemplo"). Después se borran y el local carga los suyos.</p>
@@ -412,9 +399,10 @@ html:has(dialog[open]){overflow:hidden}
   <div class="d-cab"><h3 id="d-comp-t">Comprobante</h3><button type="button" class="cerrar" data-cerrar aria-label="Cerrar"><svg class="ic"><use href="#i-x"/></svg></button></div>
   <div class="d-cuerpo"><div class="comp" id="comp"></div></div>
   <div class="d-pie">
-    <a class="btn btn-wa" id="comp-wa" href="#" target="_blank" rel="noopener"><svg class="ic lleno"><use href="#i-wa"/></svg>Mandar por WhatsApp</a>
-    <button type="button" class="btn btn-borde" id="comp-imprimir"><svg class="ic"><use href="#i-imprimir"/></svg>Imprimir</button>
+    <button type="button" class="btn btn-prim" id="comp-pdf"><svg class="ic"><use href="#i-pdf"/></svg>Mandar PDF al cliente</button>
+    <a class="btn btn-borde" id="comp-wa" href="#" target="_blank" rel="noopener"><svg class="ic lleno"><use href="#i-wa"/></svg>Como texto</a>
     <button type="button" class="btn btn-peligro" id="comp-anular">Anular venta</button>
+    <p class="estado-pdf" id="comp-estado" role="status" hidden></p>
   </div>
 </dialog>
 
@@ -428,6 +416,7 @@ const VISTA_PREVIA = "VISTA PREVIA · panel de prueba: lo que cargues queda guar
 const GUARDAR_EN = "navegador";
 const LOCAL_INICIAL = { nombre: "Como Perro y Gato", direccion: "Teodoro Bronzini 614, Mar del Plata", cuit: "", iva: "", pie: "" };
 const PAGOS = ["Efectivo", "Transferencia", "Débito", "Crédito"];
+const LOGO = "img/logo-cartel.webp";   // va arriba del comprobante y del PDF ("" = sin logo)
 // Productos de ejemplo: SOLO para mostrar el panel. Nombres y precios inventados, marcados ejemplo:true.
 const EJEMPLO = [
   { nombre: "Alimento perro adulto", pres: "15 kg", cat: "Perros", precio: 42000, stock: 6, minimo: 2 },
@@ -578,7 +567,7 @@ function verComprobante(n, recien) {
   const v = db.ventas.find((x) => x.n === n); if (!v) return;
   compAbierto = n;
   const L = db.local;
-  $("#comp").innerHTML = '<div class="c-cab"><b>' + esc(L.nombre) + "</b>" +
+  $("#comp").innerHTML = '<div class="c-cab">' + (logo ? '<img class="c-logo" src="' + LOGO + '" alt="">' : "") + "<b>" + esc(L.nombre) + "</b>" +
     (L.direccion ? "<small>" + esc(L.direccion) + "</small>" : "") +
     (L.cuit || L.iva ? "<small>" + esc([L.cuit ? "CUIT " + L.cuit : "", L.iva].filter(Boolean).join(" · ")) + "</small>" : "") +
     '<span class="nofiscal">Documento no válido como factura</span></div>' +
@@ -591,9 +580,107 @@ function verComprobante(n, recien) {
     (L.pie ? '<p style="text-align:center;margin:12px 0 0">' + esc(L.pie) + "</p>" : "");
   $("#d-comp-t").textContent = recien ? "Venta cobrada" : "Comprobante";
   $("#comp-wa").href = "https://wa.me/?text=" + encodeURIComponent(textoComprobante(v));
+  $("#comp-estado").hidden = true;
   const an = $("#comp-anular"); an.hidden = v.anulada; an.classList.remove("seguro"); an.textContent = "Anular venta";
   abrir("#d-comp");
 }
+/* ---------- el comprobante en PDF (se arma acá mismo, sin servicios de afuera) ----------
+   Página angosta, como un ticket, para leer en el celular. Helvetica (viene en todo lector
+   de PDF) y el logo como JPEG. Dice "Documento no válido como factura": NO es una factura. */
+let logo = null;   // { bytes, w, h } cuando el logo cargó
+function cargarLogo() {
+  if (!LOGO) return;
+  const im = new Image();
+  im.onload = () => { try {
+    const k = Math.min(1, 300 / im.naturalWidth), c = document.createElement("canvas");
+    c.width = Math.round(im.naturalWidth * k); c.height = Math.round(im.naturalHeight * k);
+    const x = c.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height); x.drawImage(im, 0, 0, c.width, c.height);
+    const bin = atob(c.toDataURL("image/jpeg", 0.9).split(",")[1]), u = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i);
+    logo = { bytes: u, w: c.width, h: c.height };
+  } catch (e) { logo = null; } };
+  im.src = LOGO;
+}
+const ANCHO = { "0": 556, "1": 556, "2": 556, "3": 556, "4": 556, "5": 556, "6": 556, "7": 556, "8": 556, "9": 556, "$": 556, ".": 278, ",": 278, " ": 278, "-": 333, "/": 278, ":": 278, "%": 889 };
+const anchoTxt = (t, tam) => Array.from(t).reduce((a, c) => a + (ANCHO[c] || 556), 0) * tam / 1000;
+function cadena(t) {   // texto → cadena PDF en WinAnsi (tildes, ñ, ×, °, ·)
+  const raro = { 0x2212: 45, 0x2013: 45, 0x2014: 45, 0x2018: 39, 0x2019: 39, 0x201C: 34, 0x201D: 34, 0x2026: 46 };
+  let o = "";
+  for (const ch of String(t)) {
+    let c = ch.codePointAt(0); if (raro[c]) c = raro[c]; if (c > 255) c = 63;
+    if (c === 40 || c === 41 || c === 92) o += "\\" + String.fromCharCode(c);
+    else if (c < 32 || c > 126) o += "\\" + c.toString(8).padStart(3, "0");
+    else o += String.fromCharCode(c);
+  }
+  return "(" + o + ")";
+}
+function cortar(t, tam, ancho) {   // corta en renglones por palabras (ancho aproximado)
+  const max = Math.max(8, Math.floor(ancho / (tam * 0.52))), r = []; let lin = "";
+  String(t).split(/\s+/).forEach((p) => { if ((lin + " " + p).trim().length > max && lin) { r.push(lin); lin = p; } else lin = (lin + " " + p).trim(); });
+  if (lin) r.push(lin); return r;
+}
+function pdfComprobante(v) {
+  const W = 260, M = 18, L = db.local, d = [];   // d: lo que se dibuja, con y medida desde arriba
+  const txt = (x, y, t, tam, neg, col) => d.push({ k: "t", x, y, t, tam, neg, col: col || "0.09 0.08 0.10" });
+  const der = (y, t, tam, neg, col) => txt(W - M - anchoTxt(t, tam), y, t, tam, neg, col);
+  const raya = (y, gr) => d.push({ k: "l", y, gr });
+  const GRIS = "0.37 0.35 0.38", ROJO = "0.70 0.15 0.12";
+  let y = M, xT = M;
+  if (logo) { const lw = 62, lh = Math.round(lw * logo.h / logo.w); d.push({ k: "i", x: M, y, w: lw, h: lh }); xT = M + lw + 10; }
+  let yT = y + 14; txt(xT, yT, L.nombre, 13, true);
+  cortar(L.direccion || "", 8.5, W - M - xT).forEach((r) => { yT += 12; txt(xT, yT, r, 8.5, false, GRIS); });
+  y = Math.max(yT, logo ? y + Math.round(62 * logo.h / logo.w) : yT) + 16;
+  txt(M, y, "DOCUMENTO NO VÁLIDO COMO FACTURA", 7.5, true, ROJO);
+  y += 9; raya(y);
+  y += 17; txt(M, y, "Comprobante N° " + num(v.n), 10, true); der(y, ddmm(v.dia) + " " + v.hora, 9, false, GRIS);
+  if (v.anulada) { y += 16; txt(M, y, "ANULADA", 11, true, ROJO); }
+  if (v.cliente) { y += 14; txt(M, y, "Cliente: " + v.cliente, 9, false, GRIS); }
+  y += 6;
+  v.items.forEach((it) => {
+    const imp = pesos(it.precio * it.cant);
+    cortar(it.cant + " × " + it.nombre, 9.5, W - 2 * M - anchoTxt(imp, 9.5) - 12).forEach((r, i) => { y += i ? 12 : 16; txt(M, y, r, 9.5); if (!i) der(y, imp, 9.5); });
+    y += 11; txt(M, y, pesos(it.precio) + " c/u", 8, false, GRIS);
+  });
+  if (v.descuento) { y += 16; txt(M, y, "Descuento " + v.descPct + " %", 9.5); der(y, pesos(-v.descuento), 9.5); }
+  y += 10; raya(y, true);
+  y += 19; txt(M, y, "Total", 13, true); der(y, pesos(v.total), 13, true);
+  y += 15; txt(M, y, "Pago: " + v.pago, 9, false, GRIS);
+  if (L.pie) { y += 6; cortar(L.pie, 9, W - 2 * M).forEach((r) => { y += 13; txt(M, y, r, 9); }); }
+  const H = Math.ceil(y + M);
+  const f = (n) => Math.round(n * 100) / 100;
+  const cont = d.map((o) =>
+    o.k === "t" ? o.col + " rg BT /F" + (o.neg ? 2 : 1) + " " + o.tam + " Tf " + f(o.x) + " " + f(H - o.y) + " Td " + cadena(o.t) + " Tj ET"
+    : o.k === "l" ? (o.gr ? "0.09 0.08 0.10 RG 1.2 w " : "0.85 0.83 0.80 RG 0.8 w ") + M + " " + f(H - o.y) + " m " + (W - M) + " " + f(H - o.y) + " l S"
+    : "q " + o.w + " 0 0 " + o.h + " " + o.x + " " + f(H - o.y - o.h) + " cm /Im1 Do Q").join("\n");
+  const enc = new TextEncoder(), partes = [], offs = []; let largo = 0;
+  const add = (x) => { const b = typeof x === "string" ? enc.encode(x) : x; partes.push(b); largo += b.length; };
+  const obj = (n, cuerpo) => { offs[n] = largo; add(n + " 0 obj\n"); [].concat(cuerpo).forEach(add); add("\nendobj\n"); };
+  add("%PDF-1.4\n");
+  obj(1, "<< /Type /Catalog /Pages 2 0 R >>");
+  obj(2, "<< /Type /Pages /Kids [3 0 R] /Count 1 >>");
+  obj(3, "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + W + " " + H + "] /Resources << /Font << /F1 4 0 R /F2 5 0 R >>" + (logo ? " /XObject << /Im1 7 0 R >>" : "") + " >> /Contents 6 0 R >>");
+  obj(4, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>");
+  obj(5, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>");
+  obj(6, ["<< /Length " + cont.length + " >>\nstream\n", cont, "\nendstream"]);
+  if (logo) obj(7, ["<< /Type /XObject /Subtype /Image /Width " + logo.w + " /Height " + logo.h + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length " + logo.bytes.length + " >>\nstream\n", logo.bytes, "\nendstream"]);
+  const total = logo ? 8 : 7, xref = largo;
+  add("xref\n0 " + total + "\n0000000000 65535 f \n" + offs.slice(1, total).map((o) => String(o).padStart(10, "0") + " 00000 n \n").join(""));
+  add("trailer\n<< /Size " + total + " /Root 1 0 R >>\nstartxref\n" + xref + "\n%%EOF\n");
+  return new Blob(partes, { type: "application/pdf" });
+}
+// En el celular abre "Compartir" (WhatsApp → el chat del cliente); si no se puede, baja el PDF.
+async function mandarPDF() {
+  const v = db.ventas.find((x) => x.n === compAbierto); if (!v) return;
+  const nombre = "comprobante-" + num(v.n) + ".pdf", blob = pdfComprobante(v), est = $("#comp-estado");
+  let archivo = null; try { archivo = new File([blob], nombre, { type: "application/pdf" }); } catch (e) { archivo = null; }
+  if (archivo && navigator.canShare && navigator.canShare({ files: [archivo] })) {
+    try { await navigator.share({ files: [archivo], title: "Comprobante N° " + num(v.n) }); est.textContent = "Listo, compartido."; est.hidden = false; return; }
+    catch (e) { if (e && e.name === "AbortError") return; }
+  }
+  bajar(nombre, blob);
+  est.textContent = "Se bajó el PDF. Adjuntalo en el chat del cliente."; est.hidden = false;
+}
+
 function anular() {
   const b = $("#comp-anular"), v = db.ventas.find((x) => x.n === compAbierto); if (!v || v.anulada) return;
   if (!b.classList.contains("seguro")) { b.classList.add("seguro"); b.textContent = "Tocá de nuevo para anular"; return; }
@@ -713,17 +800,17 @@ function planillaMes() {
 }
 // En la vista previa de claude.ai la descarga pasa por su permiso ("downloads"); en la web publicada, link común.
 let descargas = null;
-function bajar(nombre, texto) {
-  if (descargas) { descargas.save({ filename: nombre, data: texto }).catch(() => { /* el que mira dijo que no */ }); return; }
+function bajar(nombre, datos) {
+  if (descargas) { descargas.save({ filename: nombre, data: datos }).catch(() => { /* el que mira dijo que no */ }); return; }
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([texto], { type: "text/csv;charset=utf-8" }));
+  a.href = URL.createObjectURL(datos instanceof Blob ? datos : new Blob([datos], { type: "text/csv;charset=utf-8" }));
   a.download = nombre; document.body.appendChild(a); a.click(); a.remove();
 }
 
 /* ---------- AJUSTES ---------- */
 function pintarAjustes() {
   const L = db.local;
-  $("#a-nombre").value = L.nombre; $("#a-dir").value = L.direccion; $("#a-cuit").value = L.cuit; $("#a-iva").value = L.iva; $("#a-pie").value = L.pie;
+  $("#a-nombre").value = L.nombre; $("#a-dir").value = L.direccion; $("#a-pie").value = L.pie;
   $("#donde-guarda").textContent = memoria
     ? "Ojo: este navegador no deja guardar. Lo que cargues se pierde al cerrar."
     : "Todo queda guardado en este navegador (" + db.productos.length + " productos, " + db.ventas.length + " ventas).";
@@ -758,6 +845,7 @@ function pintarTodo() {
 
 /* ---------- arranque ---------- */
 paso("datos", cargar);
+paso("logo", cargarLogo);
 paso("descargas", () => { if (window.claude && typeof window.claude.use === "function") window.claude.use("downloads").then((d) => { descargas = d; }, () => {}); });
 paso("vista previa", () => { if (VISTA_PREVIA) { $("#previa").textContent = VISTA_PREVIA; $("#previa").hidden = false; } });
 paso("reloj", () => { const r = () => { const p = partes(new Date()); $("#reloj").innerHTML = ddmm(p.dia) + "<br>" + p.hora; }; r(); setInterval(r, 30000); });
@@ -811,12 +899,12 @@ paso("ventas", () => {
   $("#csv").addEventListener("click", planillaMes);
   document.addEventListener("click", (e) => { const v = e.target.closest("[data-venta]"); if (v) verComprobante(Number(v.dataset.venta)); });
   $("#comp-anular").addEventListener("click", anular);
-  $("#comp-imprimir").addEventListener("click", () => { try { window.print(); } catch (e) { /* vista previa */ } });
+  $("#comp-pdf").addEventListener("click", mandarPDF);
 });
 paso("ajustes", () => {
   $("#f-local").addEventListener("submit", (e) => {
     e.preventDefault();
-    db.local = { nombre: $("#a-nombre").value.trim() || LOCAL_INICIAL.nombre, direccion: $("#a-dir").value.trim(), cuit: $("#a-cuit").value.trim(), iva: $("#a-iva").value, pie: $("#a-pie").value.trim() };
+    db.local = Object.assign({}, db.local, { nombre: $("#a-nombre").value.trim() || LOCAL_INICIAL.nombre, direccion: $("#a-dir").value.trim(), pie: $("#a-pie").value.trim() });
     guardar(); $("#guardado").hidden = false; setTimeout(() => { $("#guardado").hidden = true; }, 2500);
   });
   $("#cargar-ejemplo").addEventListener("click", cargarEjemplo);

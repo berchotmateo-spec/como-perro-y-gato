@@ -152,21 +152,29 @@ Mensaje de prueba real (18/11/2026):
 ¿Me confirmás precio y disponibilidad?
 ```
 
-## Panel del local (facturación y control de stock)
+## Panel del local (comprobante en PDF y control de stock)
 
 Pedido de Mateo (18/11/2026): "que tenga sistema de facturación y control de stock".
+**Aclaración de Mateo (audios del 19/11/2026): la dueña no factura.** Lo que
+quiere es que, al vender, le mande al cliente **un PDF con el comprobante de
+venta** (no impreso). Por eso no hay nada de ARCA en el panel.
 Es `panel.html`, **privado del local** y separado de la página pública (no hay
 link desde la web; `noindex`). Vista previa aparte: https://claude.ai/artifact/Ks192RKDtiVX26yDHCmGeS
-(privada, con permiso `downloads` para la planilla). Se arma con
+(compartida como "cualquiera con el link"; con permiso `downloads` para la planilla y el PDF, y `img/logo-cartel.webp` en `files`). Se arma con
 `PAGINA=panel.html python3 vista-previa.py <carpeta> "Panel Como Perro y Gato"`
 y se publica con `capabilities: {downloads: true}`.
 
 - **Vender (caja):** buscador, tocar para sumar, − y +, descuento %, medio de
   pago (efectivo, transferencia, débito, crédito), cliente opcional, **Cobrar**.
   No deja vender más de lo que hay. Al cobrar descuenta el stock y abre el comprobante.
-- **Comprobante:** numerado (N° 0001…), con los datos del local, y la leyenda
-  **"Documento no válido como factura"**. Se manda por WhatsApp (texto) o se imprime.
-  Una venta se puede **anular** (dos toques) y devuelve el stock.
+- **Comprobante:** numerado (N° 0001…), con el logo, los datos del local y la
+  leyenda **"Documento no válido como factura"**. Botón principal **"Mandar PDF
+  al cliente"**: arma el PDF ahí mismo (`pdfComprobante()`, escrito a mano, sin
+  librerías ni servicios de afuera: Helvetica + el logo en JPEG, página angosta
+  tipo ticket) y en el celular abre **Compartir** (WhatsApp → chat del cliente).
+  Donde no se puede compartir (la compu, la vista previa), lo baja y avisa
+  "Adjuntalo en el chat del cliente". También "Como texto" (WhatsApp con el
+  detalle escrito). Una venta se puede **anular** (dos toques) y devuelve el stock.
 - **Stock:** lista con "Sin stock" / "Quedan N" según el mínimo de cada producto,
   filtros, **Ingreso** de mercadería (con nota: proveedor, remito) y **Corregir**
   por conteo. Todo queda en "Últimos movimientos". Aviso de stock bajo en Vender
@@ -175,19 +183,16 @@ y se publica con `capabilities: {downloads: true}`.
 - **Ventas:** cierre de caja por día (total, cantidad, productos, total por medio
   de pago), lista de comprobantes y **Planilla del mes** (CSV con `;`, para Excel
   y el contador).
-- **Ajustes:** datos del comprobante (nombre, dirección, CUIT, condición IVA,
-  texto al pie), la tarjeta de factura electrónica y la **Prueba**: "Cargar
+- **Ajustes:** datos del comprobante (nombre, dirección, texto al pie; sin CUIT
+  ni condición IVA, porque no factura) y la **Prueba**: "Cargar
   productos de ejemplo" (8 productos genéricos, sin marcas, precios inventados,
   marcados "ejemplo") y "Borrar todo" (dos toques).
 
-**Factura electrónica (ARCA): NO está conectada, y a propósito.** El panel no
-inventa CAE ni imita una factura. Para facturar de verdad hace falta: CUIT y
-condición (monotributo → factura C), un punto de venta para web service, el
-certificado digital (lo saca el dueño con su clave fiscal) y **un servidor** que
-firme (el certificado nunca va en el HTML). Caminos: un servicio de facturación
-con API (pago mensual) o una función propia en Supabase. Hasta entonces, el
-dueño puede seguir facturando en "Comprobantes en línea" de ARCA con los datos
-del comprobante.
+**Factura electrónica (ARCA): no va** (la dueña no factura, 19/11/2026). El
+comprobante nunca simula una factura: sin CAE, sin "Factura" en el título y
+siempre con "Documento no válido como factura". Si algún día quiere facturar,
+hace falta CUIT, punto de venta para web service, el certificado del dueño y un
+servidor que firme (nunca el certificado en el HTML).
 
 **Dónde se guardan los datos:** hoy, en el navegador de ese aparato
 (`localStorage`, clave `cpyg-panel-v1`). Sirve para la demo, pero **no** para
@@ -217,8 +222,8 @@ probar desde acá.
 - [ ] **Fotos reales**: frente y adentro → `SUCURSALES[0].foto`. La foto del frente de Mateo podría ir, pero muestra el WhatsApp de la vidriera: esperar a que se pueda publicar ese número.
 - [ ] **Logo original** (archivo).
 - [ ] ¿Quieren **precios** en la web? Solo si los pasa el dueño, con fecha.
-- [ ] **Panel:** ¿necesita **factura electrónica** de verdad (ARCA) o le alcanza el comprobante? Si sí: CUIT, condición (¿monotributo?) y si ya tiene punto de venta.
-- [ ] **Panel:** ¿quién lo usa y en qué aparatos (celular del mostrador, compu)? Define si hace falta Supabase desde el día uno (sí, si son dos o más aparatos).
+- [x] **Panel: ¿factura?** No factura: comprobante en PDF para el cliente (Mateo, 19/11/2026).
+- [ ] **Panel: aparatos.** Mateo (19/11/2026): "supongo que va a usar el celular [y] la computadora". Si son los dos, **Supabase desde el día uno** (si no, cada aparato tiene su propio stock). Hay una palabra del audio que no se entendió ("que esté para … también"): preguntarle.
 - [ ] **Panel:** su lista de productos con precio y stock (puede ser una planilla; se carga de una vez).
 
 ## PROVISORIO
@@ -254,7 +259,7 @@ probar desde acá.
 - [ ] Sacar las marcas de demo (ver arriba) al cerrar.
 - [ ] GitHub Pages (`python3 publicar.py`; mientras sea demo el `noindex` ya va en el `index.html`), dominio, Search Console, Perfil de Empresa (ojo con el homónimo: que la ficha quede con Teodoro Bronzini 614).
 - [ ] QR.
-- [ ] Panel: pasar los datos a Supabase (ver "Panel del local") y, si lo contrata, conectar la factura electrónica.
+- [ ] Panel: pasar los datos a Supabase (ver "Panel del local"): hace falta si usa celular y compu.
 
 ## Cómo se trabaja acá
 
@@ -267,6 +272,7 @@ probar desde acá.
 
 Una línea por pedido, la más nueva arriba.
 
+- 24/11/2026 — Audios de Mateo (19/11, transcriptos con Whisper): "ella no factura… cuando hace la venta le envía un PDF, el comprobante de venta" y "va a usar el celular [y] la computadora" → el comprobante sale en **PDF** (con logo, hecho en el mismo navegador) y se comparte por WhatsApp desde el celular o se baja en la compu; se sacaron la tarjeta de ARCA y los campos CUIT / IVA; se quitó "Imprimir".
 - 19/11/2026 — Mateo pasó el Instagram del local: @petshop.comoperroygato → en el pie (el botón muestra el usuario, por el homónimo) y en la ficha de Google (`sameAs`). Sin el `?gwpx=…` de seguimiento. No se agregó "promos del momento" porque no pudimos ver si suben promos.
 - 18/11/2026 — Mateo: "que tenga sistema de facturación y control de stock" → `panel.html`, panel privado del local: caja, comprobante no fiscal numerado (WhatsApp / imprimir / anular), stock con ingresos, correcciones, mínimos y movimientos, cierre del día y planilla del mes. Factura electrónica ARCA explicada y sin conectar (necesita CUIT, certificado y servidor). Datos en el navegador para la demo; Supabase al vender.
 - 18/11/2026 — Mateo: "Teodoro Bronzini 614 es la altura del local" → dirección, "Cómo llegar" y ficha de Google con el 614; abajo, "Cerca de Ituzaingó". Ya no lleva chip "A confirmar" (el horario sigue a confirmar).
